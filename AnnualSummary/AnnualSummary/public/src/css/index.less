@@ -7,7 +7,12 @@
 
         .section {
             height: 100%;
-            text-align:center;
+            text-align: center;
+
+            p {
+                font-size: 48px;
+                color: #707d8d;
+            }
         }
 
         .section-one {
@@ -15,7 +20,7 @@
 
             .year {
                 color: #fff;
-                margin-top:100px;
+                margin-top: 100px;
 
                 .number {
                     display: inline-block;
@@ -28,30 +33,62 @@
                     margin-right: 5px;
                 }
             }
-            h1{
-                color:#fff;
-                font-size:48px;
-                margin-top:40px;
-                padding:10px;
-                border:8px solid #aa314d;
-                border-radius:15px;
-                width:386px;
-                display:inline-block;
+
+            h1 {
+                color: #fff;
+                font-size: 48px;
+                margin-top: 40px;
+                padding: 10px;
+                border: 8px solid #aa314d;
+                border-radius: 15px;
+                width: 386px;
+                display: inline-block;
             }
+
             img {
                 margin-top: 143px;
+                width:100%;
             }
         }
-        .section-two{
+
+        .section-two {
             background-color:#f0f4fa;
-            p{
-                font-size:48px;
-                color:#707d8d;
-            }
-            .career-chart{
-                width:650px;
+            .tags-list {
+                position: relative;
+                width:1000px;
                 height:500px;
-                margin:50px auto;                
+                margin:0 auto;
+
+                .person {
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    background-color: #aa314d;
+                    color:#fff;
+                    font-size: 28px;
+                    border: 5px solid #707d8d;
+                    border-radius: 50%;
+                    width: 90px;
+                    height: 50px;
+                    padding: 25px 5px;
+                }
+            }
+        }
+
+        .section-three {
+            background-color: #f0f4fa;
+
+            .career-chart {
+                width: 650px;
+                height: 500px;
+                margin: 50px auto;
+            }
+        }
+        .section-four,.section-five{
+            .personal-chart{
+                width:40%;
+                height:300px;
+                display:inline-block;
             }
         }
     }

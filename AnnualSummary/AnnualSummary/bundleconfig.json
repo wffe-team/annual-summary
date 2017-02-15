@@ -1,0 +1,9 @@
+[
+  {
+    "outputFileName": "public/css/global.css",
+    "inputFiles": [
+      "public/src/css/index.css",
+      "public/src/css/reset.css"
+    ]
+  }
+]

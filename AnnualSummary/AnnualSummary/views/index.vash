@@ -8,22 +8,47 @@
 				<span class="number">1</span>
 				<span class="number">6</span>
 			</div>
-			<h1>前端组年度总结</h1>
+			<h1>前端组年终总结</h1>
 			<img src="../src/img/bg.png">
 		</div>
 		<div class="section section-two">
+			<p>我们的8个小伙伴</p>
+			<div id="tagsList" class="tags-list">
+				<div class="person">毕山山</div>
+				<div class="person">杨明</div>
+				<div class="person">李利</div>
+				<div class="person">鹿丹</div>
+				<div class="person">刘悦</div>
+				<div class="person">张凯迪</div>
+				<div class="person">崔微娜</div>
+				<div class="person">安晓凯</div>
+			</div>
+		</div>
+		<div class="section section-three">
 			<p>全年我们共做了100个项目</p>
 		    <div class="career-chart" id="career-chart"></div>
 		</div>
-		<div class="section">
+		<div class="section section-four">
+			<div class="personal-chart" id="biChart"></div>
+			<div class="personal-chart" id="yangChart"></div>
+			<div class="personal-chart" id="liChart"></div>
+			<div class="personal-chart" id="luChart"></div>
+		</div>
+		<div class="section section-five">
+			<div class="personal-chart" id="liuChart"></div>
+			<div class="personal-chart" id="zhangChart"></div>
+			<div class="personal-chart" id="cuiChart"></div>
+			<div class="personal-chart" id="anChart"></div>
 		</div>
 	</div>
     })
     @html.block('script', function(model){
 <script src="../js/jquery-1.12.4.min.js"></script>
 <script src="../js/echarts.min.js"></script>
+<script src="../js/tags.js"></script>
 <script src="../module/jquery.fullpage.min.js"></script>
 <script src="../src/js/initfullpage.js"></script>
 <script src="../src/js/initecharts.js"></script>
+<script src="../src/js/initPersonalCharts.js"></script>
     })
 })

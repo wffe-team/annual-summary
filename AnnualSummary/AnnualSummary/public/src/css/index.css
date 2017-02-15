@@ -7,6 +7,10 @@ body .fullpage .section {
   height: 100%;
   text-align: center;
 }
+body .fullpage .section p {
+  font-size: 48px;
+  color: #707d8d;
+}
 body .fullpage .section-one {
   background: linear-gradient(to bottom, #4f7f9b, #293c55);
 }
@@ -36,16 +40,41 @@ body .fullpage .section-one h1 {
 }
 body .fullpage .section-one img {
   margin-top: 143px;
+  width: 100%;
 }
 body .fullpage .section-two {
   background-color: #f0f4fa;
 }
-body .fullpage .section-two p {
-  font-size: 48px;
-  color: #707d8d;
+body .fullpage .section-two .tags-list {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
 }
-body .fullpage .section-two .career-chart {
+body .fullpage .section-two .tags-list .person {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #aa314d;
+  color: #fff;
+  font-size: 28px;
+  border: 5px solid #707d8d;
+  border-radius: 50%;
+  width: 90px;
+  height: 50px;
+  padding: 25px 5px;
+}
+body .fullpage .section-three {
+  background-color: #f0f4fa;
+}
+body .fullpage .section-three .career-chart {
   width: 650px;
   height: 500px;
   margin: 50px auto;
+}
+body .fullpage .section-four .personal-chart,
+body .fullpage .section-five .personal-chart {
+  width: 40%;
+  height: 300px;
+  display: inline-block;
 }
