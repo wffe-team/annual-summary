@@ -53,6 +53,7 @@
       <SubType>Content</SubType>
       <DependentUpon>public\css\global.css</DependentUpon>
     </Content>
+    <Content Include="public\favicon.ico" />
     <Content Include="public\module\jquery.fullpage.min.css" />
     <Content Include="public\src\css\index.css">
       <SubType>Content</SubType>
