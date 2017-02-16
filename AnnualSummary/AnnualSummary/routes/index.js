@@ -29,8 +29,24 @@ router.get('/', function (req, res) {
             var maxNumberIndex = mNumber.indexOf(maxNumber); 
             //参与人数最多的项目名称
             var maxNumberItemName = obj.cards[maxNumberIndex].name;
+
             //输出项目名称
             console.log(maxNumberItemName);
+
+            //idMembersFullName
+            var idMembersFullName = [];
+            var idMembers = obj.cards[maxNumberIndex].idMembers;
+            for (var i = 0; i < obj.cards[maxNumberIndex].idMembers.length; i++) {
+                var idMembersItem = obj.cards[maxNumberIndex].idMembers[i];
+                for (var j = 0; j < obj.members.length; j++) {
+                    var id = obj.members[j].id;
+                    if (idMembersItem == id) {
+                        idMembersFullName.push(obj.members[j].fullName)
+                    }
+                }
+            }
+            //输出成员姓名
+            console.log(idMembersFullName);
 
             res.render('index', { value: fullNameArr });
         }
