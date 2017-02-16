@@ -41947,40 +41947,6 @@
             "username": "wfyangming"
         },
         {
-            "id": "535d15ce1ff7e72b3d02c417",
-            "avatarHash": null,
-            "bio": "",
-            "bioData": {
-                "emoji": {}
-            },
-            "confirmed": true,
-            "fullName": "杨赛军",
-            "idPremOrgsAdmin": [],
-            "initials": "YSJ",
-            "memberType": "normal",
-            "products": [],
-            "status": "disconnected",
-            "url": "https://trello.com/guobayang",
-            "username": "guobayang"
-        },
-        {
-            "id": "535d210124bac2691ea1615d",
-            "avatarHash": "",
-            "bio": "",
-            "bioData": {
-                "emoji": {}
-            },
-            "confirmed": true,
-            "fullName": "梅葆瑞",
-            "idPremOrgsAdmin": [],
-            "initials": "葆瑞",
-            "memberType": "normal",
-            "products": [],
-            "status": "disconnected",
-            "url": "https://trello.com/meibaorui",
-            "username": "meibaorui"
-        },
-        {
             "id": "53cf7793331da745cfece5e2",
             "avatarHash": "b0e6b8a17ebcc4b6362a852500e3ddb2",
             "bio": "",
