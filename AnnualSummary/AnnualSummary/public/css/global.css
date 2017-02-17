@@ -57,12 +57,11 @@ body .fullpage .section-two .tags-list .person {
   left: 0;
   background-color: #aa314d;
   color: #fff;
-  font-size: 28px;
   border: 5px solid #707d8d;
   border-radius: 50%;
   width: 90px;
-  height: 50px;
-  padding: 25px 5px;
+  height: 30px;
+  padding: 35px 5px;
 }
 body .fullpage .section-three {
   background-color: #f0f4fa;
@@ -77,6 +76,19 @@ body .fullpage .section-five .personal-chart {
   width: 40%;
   height: 300px;
   display: inline-block;
+}
+body .fullpage .section-six {
+  position: relative;
+}
+body .fullpage .section-six p {
+  font-size: 36px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+body .fullpage .section-six .position {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
 }
 body,
 a,

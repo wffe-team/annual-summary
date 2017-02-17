@@ -36,6 +36,12 @@
 	        <div class="personal-chart" id="cuiChart"></div>
 	        <div class="personal-chart" id="anChart"></div>
 	    </div>
+		<div class="section section-six">
+			<p>其中参与人数最多的项目是</p>
+			<p>会议桌 <span>参与人员：</span><span>张凯迪张凯迪张凯迪张凯迪张凯迪</span></p>
+			<img src="../src/img/project.png">
+		    <img src="../src/img/cooperation.png" class="position">		
+		</div>
 	</div>
     })
     @html.block('script', function(model){
