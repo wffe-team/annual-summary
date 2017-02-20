@@ -30,10 +30,9 @@
     </div>
     <div class="section section-four">
         @for(var i=0;i< model.persoanlArr.length;i++){
-        @for(var j=0;j< model.persoanlArr[i].length;j++){
-        <input class="items" type="hidden" value="@model.persoanlArr[i][j]" />
-        }
-        <!--<input class="items" type="hidden" value="@model.persoanlArr[i]" />-->
+            @for(var j=0;j< model.persoanlArr[i].length;j++){
+               <input class="personal-items" type="hidden" value="@model.persoanlArr[i][j]" />
+            }
         }
         <div class="personal-chart" id="biChart"></div>
         <div class="personal-chart" id="yangChart"></div>
