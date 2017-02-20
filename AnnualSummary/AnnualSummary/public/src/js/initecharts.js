@@ -14,7 +14,7 @@
         legend: {
             orient: 'vertical',
             x: 'left',
-            data: ['高教', '企业', '医药','WFUI','基教','其他']
+            data: ['高教', '企业', '医药','WFUI','基教','Lab','其他']
         },
         series: [
             {
@@ -41,12 +41,13 @@
                     }
                 },
                 data: [
-                    { value: 335, name: '高教' },
-                    { value: 310, name: '企业' },
-                    { value: 234, name: '医药' },
-                    { value: 234, name: 'WFUI' },
-                    { value: 234, name: '基教' },
-                    { value: 234, name: '其他' }
+                    { value: arrItems[1], name: '高教' },
+                    { value: arrItems[2], name: '企业' },
+                    { value: arrItems[3], name: '医药' },
+                    { value: arrItems[4], name: 'WFUI' },
+                    { value: arrItems[5], name: '基教' },
+                    { value: arrItems[6], name: 'Lab' },
+                    { value: arrItems[7], name: '其他' }
                 ]
             }
         ]

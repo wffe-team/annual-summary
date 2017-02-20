@@ -22,7 +22,7 @@
     </div>
     <div class="section section-three">
         <p>全年我们共做了<span>@model.totalItems[0]</span>个项目</p>
-        @for(var i=1;i< model.totalItems.length;i++){
+        @for(var i=0;i< model.totalItems.length;i++){
         <input class="items" type="hidden" value="@model.totalItems[i]" />
         }
         <div class="career-chart" id="career-chart">

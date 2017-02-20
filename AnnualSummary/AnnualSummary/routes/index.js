@@ -34,46 +34,25 @@ router.get('/', function (req, res) {
             }
             //输出项目总数
             console.log('总项目数：'+names.length);
-            //定义不同事业部门的项目数
-            var wfNumber = 0;
-            var gjNumber = 0;
-            var yyNumber = 0;
-            var qyNumber = 0;
-            var jjNumber = 0;
-           //截取字符串
-            var newNamesArr = [];
-            for (var i = 0; i < names.length; i++) {
-                var bar = names[i].indexOf('-');
-                var newNames = names[i].substring(0, bar - 1);
-                newNamesArr.push(newNames)
-                //输出截取后的数据
-               // console.log(newNamesArr);
-                if (newNames == 'WFUI') {
-                    wfNumber++;
-                }
-                if (newNames == '高教') {
-                    gjNumber++;
-                }
-                if (newNames == '医药') {
-                    yyNumber++;
-                }
-                if (newNames == '企业') {
-                    qyNumber++;
-                }
-                if (newNames == '基教') {
-                    jjNumber++;
-                }
-            }
-            var otherNumber = names.length - wfNumber - gjNumber - yyNumber - qyNumber - jjNumber;
-            //输出不同事业部的项目数
-            //console.log('wfui：'+wfnumber);
-            //console.log('高教：'+gjnumber);
-            //console.log('医药：' +yynumber);
-            //console.log('企业：' +qynumber);
-            //console.log('基教：' +jjnumber);
-            //console.log('其他：' + othernumber);
+
+            //不同事业部项目数
             var totalItems = [];
-            totalItems.push(names.length,wfNumber, gjNumber, yyNumber, qyNumber, jjNumber,otherNumber)
+            var otherItem = 0;
+            var sum = 0;
+            var careerArr = ['高教', '企业', '医药', 'WFUI', '基教', 'Lab'];
+            totalItems.push(names.length);
+            for (var i = 0; i < careerArr.length; i++) {
+                var singleNum = 0;
+                for (var j = 0; j < names.length; j++) {
+                    if (names[j].indexOf(careerArr[i]) > -1 && names[j].indexOf(careerArr[i]) < 3) {
+                        singleNum++;                        
+                    }
+                }
+                sum += singleNum;
+                totalItems.push(singleNum);
+            }
+            otherItem = names.length - sum;
+            totalItems.push(otherItem);
             console.log(totalItems);
 
             //不同成员所做的项目
