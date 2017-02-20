@@ -58,6 +58,7 @@ router.get('/', function (req, res) {
             otherItem = names.length - sum;
             totalItems.push(otherItem);
             console.log(totalItems);
+
             //个人项目分布
             var persoanlArr = [];            
             for (var i = 0; i < idArr.length; i++) {
@@ -86,8 +87,7 @@ router.get('/', function (req, res) {
                 persoanlArr.push(arr);
 
             }           
-            console.log(persoanlArr);          
-
+     
             //参与项目人数最多
             var mNumber = [];
             for (var i = 0; i < obj.cards.length; i++) {
