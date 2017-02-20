@@ -11,11 +11,13 @@ router.get('/', function (req, res) {
             var obj = JSON.parse(data);
             //前端成员
             var fullNameArr = [];
+            var idArr = [];//前端成员id
             for (var i = 0; i < obj.members.length; i++) {
                 var fullName = obj.members[i].fullName;
+                var id = obj.members[i].id;
                 fullNameArr.push(fullName);
+                idArr.push(id);
             }
-
             //总项目
             var idList;
             var year = '2016';//设置不同年限的
@@ -26,14 +28,16 @@ router.get('/', function (req, res) {
             }
             //所有项目名称
             var names = [];
+            var card = [];//2016所有项目的数据
             for (var i = 0; i < obj.cards.length; i++) {
                 if (obj.cards[i].idList == idList) {
                     var name = obj.cards[i].name;
                     names.push(name);
+                    card.push(obj.cards[i]);
                 }
             }
             //输出项目总数
-            console.log('总项目数：'+names.length);
+            console.log('总项目数：' + names.length);
 
             //不同事业部项目数
             var totalItems = [];
@@ -54,79 +58,35 @@ router.get('/', function (req, res) {
             otherItem = names.length - sum;
             totalItems.push(otherItem);
             console.log(totalItems);
-
-            //不同成员所做的项目
-            //定义一个成员测试数据
-            //var nameId = '53cf7793331da745cfece5e2';
-            var namesItems = [];
-            //所有成员对应的ID
-            for (var k = 0; k < obj.members.length; k++) {
-                var nameId = obj.members[k].id;
-                var fullName = obj.members[k].fullName; 
-                for (var i = 0; i < obj.cards.length; i++) {
-                    for (var j = 0; j < obj.cards[i].idMembers.length; j++) {
-                        //判断前端成员是否与参与项目的成员id匹配并且是否是2016年完成
-                        if (nameId == obj.cards[i].idMembers[j] && obj.cards[i].idList == idList) {
-                            var outItems = fullName + ":" + obj.cards[i].name;
-                            namesItems.push(outItems)
+            //个人项目分布
+            var persoanlArr = [];            
+            for (var i = 0; i < idArr.length; i++) {
+                var personalItem = [];
+                var arr = [];
+                var total = 0;
+                var other = 0;
+                //每个人的项目
+                for (var j = 0; j < card.length; j++) {
+                    if (card[j].idMembers.indexOf(idArr[i])> -1) {
+                        personalItem.push(card[j].name);
+                    }
+                }
+                for (var m = 0; m < careerArr.length; m++) {
+                    var single = 0;                    
+                    for (var n = 0; n < personalItem.length; n++) {
+                        if (personalItem[n].indexOf(careerArr[m]) > -1 && personalItem[n].indexOf(careerArr[m]) < 3) {
+                            single++; 
                         }
                     }
-                } 
-            }
-            var ly = [];
-            var zkd = [];
-            var bss = [];
-            var cwn = [];
-            var axk = [];
-            var ll = [];
-            var ym = [];
-            var ld = [];
-            for (var i = 0; i < namesItems.length; i++) {
-                var tt = namesItems[i].indexOf(':');
-                var arr = namesItems[i].substring(0, tt);
-                var items = namesItems[i].substring(tt+1, namesItems.length-1);
-                if (arr == '刘悦') {
-                    ly.push(items);
+                    total += single;
+                    arr.push(single);
                 }
-                if (arr == '张凯迪') {
-                    zkd.push(items);
-                }
-                if (arr == '毕山山') {
-                    bss.push(items);
-                }
-                if (arr == '李利') {
-                    ll.push(items);
-                }
-                if (arr == '杨明') {
-                    ym.push(items);
-                }
-                if (arr == '鹿丹') {
-                    ld.push(items);
-                }
-                if (arr == '安晓凯') {
-                    axk.push(items);
-                }
-                if (arr == '崔微娜') {
-                    cwn.push(items);
-                }
-            }
-            //输出各个成员的2016年，完成的项目名称
-            console.log(ly);
-            console.log(zkd);
-            console.log(ll);
-            console.log(bss);
-            console.log(axk);
-            console.log(ym);
-            console.log(cwn);
-            console.log(ld);
-            // console.log(namesItems);
-            //每个成员不同事业部完成项目的个数
-            //刘悦
-            for (var i = 0; i < ly.length; i++) {
-            }
+                other = personalItem.length - total;
+                arr.push(other);
+                persoanlArr.push(arr);
 
-
-
+            }           
+            console.log(persoanlArr);          
 
             //参与项目人数最多
             var mNumber = [];
@@ -157,7 +117,7 @@ router.get('/', function (req, res) {
             //输出成员姓名
             console.log(idMembersFullName);
 
-            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems });
+            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr });
         }
     });
 

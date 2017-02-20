@@ -29,6 +29,9 @@
         </div>
     </div>
     <div class="section section-four">
+		@for(var i=0;i< model.persoanlArr.length;i++){
+        <input class="items" type="hidden" value="@model.totalItems[i]" />
+        }
         <div class="personal-chart" id="biChart"></div>
         <div class="personal-chart" id="yangChart"></div>
         <div class="personal-chart" id="liChart"></div>
