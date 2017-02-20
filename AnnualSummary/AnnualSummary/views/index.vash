@@ -1,56 +1,60 @@
 ﻿@html.extend('layout', function(model){
     @html.block('content', function(model){
-	<div class="fullpage" id="fullpage">
-	    <div class="section section-one">
-	        <div class="year">
-	            <span class="number">2</span>
-	            <span class="number">0</span>
-	            <span class="number">1</span>
-	            <span class="number">6</span>
-	        </div>
-	        <h1>前端组年度总结</h1>
-	        <img src="../src/img/bg.png">
-	    </div>
-	    <div class="section section-two">
-	        <p>我们的<span>@model.value.length</span>个小伙伴</p>
-	        <div id="tagsList" class="tags-list">
-	            @for(var i=0;i < model.value.length; i++)
-	            {
-	            <div class="person">@model.value[i]</div>
-	            }
-	        </div>
-	    </div>
-	    <div class="section section-three">
-	        <p>全年我们共做了100个项目</p>
-	        <div class="career-chart" id="career-chart"></div>
-	    </div>
-	    <div class="section section-four">
-	        <div class="personal-chart" id="biChart"></div>
-	        <div class="personal-chart" id="yangChart"></div>
-	        <div class="personal-chart" id="liChart"></div>
-	        <div class="personal-chart" id="luChart"></div>
-	    </div>
-	    <div class="section section-five">
-	        <div class="personal-chart" id="liuChart"></div>
-	        <div class="personal-chart" id="zhangChart"></div>
-	        <div class="personal-chart" id="cuiChart"></div>
-	        <div class="personal-chart" id="anChart"></div>
-	    </div>
-		<div class="section section-six">
-			<p>其中参与人数最多的项目是</p>
-			<p>会议桌 <span>参与人员：</span><span>张凯迪张凯迪张凯迪张凯迪张凯迪</span></p>
-			<img src="../src/img/project.png">
-		    <img src="../src/img/cooperation.png" class="position">		
-		</div>
-	</div>
+<div class="fullpage" id="fullpage">
+    <div class="section section-one">
+        <div class="year">
+            <span class="number">2</span>
+            <span class="number">0</span>
+            <span class="number">1</span>
+            <span class="number">6</span>
+        </div>
+        <h1>前端组年度总结</h1>
+        <img src="../src/img/bg.png">
+    </div>
+    <div class="section section-two">
+        <p>我们的<span>@model.value.length</span>个小伙伴</p>
+        <div id="tagsList" class="tags-list">
+            @for(var i=0;i < model.value.length; i++)
+            {
+            <div class="person">@model.value[i]</div>
+            }
+        </div>
+    </div>
+    <div class="section section-three">
+        <p>全年我们共做了<span>@model.totalItems[0]</span>个项目</p>
+        @for(var i=1;i< model.totalItems.length;i++){
+        <input class="items" type="hidden" value="@model.totalItems[i]" />
+        }
+        <div class="career-chart" id="career-chart">
+        </div>
+    </div>
+    <div class="section section-four">
+        <div class="personal-chart" id="biChart"></div>
+        <div class="personal-chart" id="yangChart"></div>
+        <div class="personal-chart" id="liChart"></div>
+        <div class="personal-chart" id="luChart"></div>
+    </div>
+    <div class="section section-five">
+        <div class="personal-chart" id="liuChart"></div>
+        <div class="personal-chart" id="zhangChart"></div>
+        <div class="personal-chart" id="cuiChart"></div>
+        <div class="personal-chart" id="anChart"></div>
+    </div>
+    <div class="section section-six">
+        <p>其中参与人数最多的项目是</p>
+        <p>@model.maxNumber <span>参与人员：</span><span>@model.idNumbersNames</span></p>
+        <img src="../src/img/project.png">
+        <img src="../src/img/cooperation.png" class="position">
+    </div>
+</div>
     })
     @html.block('script', function(model){
-		<script src="../js/jquery-1.12.4.min.js"></script>
-		<script src="../js/echarts.min.js"></script>
-		<script src="../js/tags.js"></script>
-		<script src="../module/jquery.fullpage.min.js"></script>
-		<script src="../src/js/initfullpage.js"></script>
-		<script src="../src/js/initecharts.js"></script>
-		<script src="../src/js/initPersonalCharts.js"></script>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/tags.js"></script>
+<script src="../module/jquery.fullpage.min.js"></script>
+<script src="../src/js/initfullpage.js"></script>
+<script src="../src/js/initecharts.js"></script>
+<script src="../src/js/initPersonalCharts.js"></script>
     })
 })
