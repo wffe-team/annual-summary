@@ -19,8 +19,8 @@ router.get('/', function (req, res) {
                 idArr.push(id);
             }
             //总项目
-            var idList;
             var year = '2016';//设置不同年限的
+            var idList;
             for (var i = 0; i < obj.lists.length; i++) {
                 if (obj.lists[i].name == year) {
                     idList = obj.lists[i].id;
@@ -109,7 +109,8 @@ router.get('/', function (req, res) {
                 var idMembersItem = obj.cards[maxNumberIndex].idMembers[i];
                 for (var j = 0; j < obj.members.length; j++) {
                     var id = obj.members[j].id;
-                    if (idMembersItem == id) {
+                    //限制年限
+                    if (idMembersItem == id || obj.cards[j].idListid == idList) {
                         idMembersFullName.push(obj.members[j].fullName)
                     }
                 }

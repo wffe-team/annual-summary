@@ -39,6 +39,7 @@
     <Compile Include="public\module\jquery.fullpage.min.js" />
     <Compile Include="public\src\js\initecharts.js" />
     <Compile Include="public\src\js\initfullpage.js" />
+    <Compile Include="public\src\js\initItemsCharts.js" />
     <Compile Include="public\src\js\initPersonalCharts.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />

@@ -30,9 +30,9 @@
     </div>
     <div class="section section-four">
         @for(var i=0;i< model.persoanlArr.length;i++){
-            @for(var j=0;j< model.persoanlArr[i].length;j++){
-               <input class="items" type="hidden" value="@model.persoanlArr[i][j]" />
-            }
+        @for(var j=0;j< model.persoanlArr[i].length;j++){
+        <input class="items" type="hidden" value="@model.persoanlArr[i][j]" />
+        }
         <!--<input class="items" type="hidden" value="@model.persoanlArr[i]" />-->
         }
         <div class="personal-chart" id="biChart"></div>
@@ -47,10 +47,11 @@
         <div class="personal-chart" id="anChart"></div>
     </div>
     <div class="section section-six">
-        <p>其中参与人数最多的项目是</p>
-        <p>@model.maxNumber <span>参与人员：</span><span>@model.idNumbersNames</span></p>
-        <img src="../src/img/project.png">
-        <img src="../src/img/cooperation.png" class="position">
+        <div id="maxItemsName"></div>
+        <input type="hidden" id="maxNumber" value="@model.maxNumber">
+        @for(var i=0;i< model.idNumbersNames.length;i++){
+        <input type="hidden" class="idNumbersNames" value="@model.idNumbersNames[i]">
+        }
     </div>
 </div>
     })
@@ -62,5 +63,6 @@
 <script src="../src/js/initfullpage.js"></script>
 <script src="../src/js/initecharts.js"></script>
 <script src="../src/js/initPersonalCharts.js"></script>
+<script src="../src/js/initItemsCharts.js"></script>
     })
 })

@@ -79,6 +79,11 @@ body .fullpage .section-five .personal-chart {
 }
 body .fullpage .section-six {
   position: relative;
+  background: #2c343c;
+}
+body .fullpage .section-six #maxItemsName {
+  width: 100%;
+  height: 500px;
 }
 body .fullpage .section-six p {
   font-size: 36px;
