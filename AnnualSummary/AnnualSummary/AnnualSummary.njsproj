@@ -57,6 +57,7 @@
       <DependentUpon>public\css\global.css</DependentUpon>
     </Content>
     <Content Include="public\favicon.ico" />
+    <Content Include="public\font\dulcinea.otf" />
     <Content Include="public\module\jquery.fullpage.min.css" />
     <Content Include="public\src\css\index.css">
       <SubType>Content</SubType>
@@ -86,6 +87,7 @@
     <Folder Include="public\img\" />
     <Folder Include="public\js\" />
     <Folder Include="public\module\" />
+    <Folder Include="public\font\" />
     <Folder Include="public\src\" />
     <Folder Include="public\src\css\" />
     <Folder Include="public\src\img\" />

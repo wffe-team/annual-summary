@@ -52,6 +52,9 @@
         <input type="hidden" class="idNumbersNames" value="@model.idNumbersNames[i]">
         }
     </div>
+	<div class="section section-seven">
+		The&nbsp;&nbsp; End !
+	</div>
 </div>
     })
     @html.block('script', function(model){
