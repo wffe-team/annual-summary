@@ -56,7 +56,7 @@ router.get('/', function (req, res) {
             }
             otherItem = names.length - sum;
             totalItems.push(otherItem);
-            //  console.log(totalItems);
+            //console.log(totalItems);
 
             //个人项目分布
             var persoanlArr = [];
@@ -84,7 +84,6 @@ router.get('/', function (req, res) {
                 other = personalItem.length - total;
                 arr.push(other);
                 persoanlArr.push(arr);
-
             }
 
             //参与项目人数最多
@@ -116,7 +115,6 @@ router.get('/', function (req, res) {
             }
             //输出成员姓名
             //console.log(idMembersFullName);
-
             res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr });
         }
     });

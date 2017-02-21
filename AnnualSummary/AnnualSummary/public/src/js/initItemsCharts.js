@@ -34,7 +34,7 @@
         },
         series: [
             {
-                name: '访问来源',
+                name: '',
                 type: 'pie',
                 radius: '55%',
                 center: ['50%', '50%'],
@@ -49,7 +49,8 @@
                 label: {
                     normal: {
                         textStyle: {
-                            color: 'rgba(255, 255, 255, 0.3)'
+                            color: 'rgba(255, 255, 255, 0.3)',
+                            fontSize: '18'
                         }
                     }
                 },

@@ -43,7 +43,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         ],
         series: [
             {
-                name: '直接访问',
+                name: '项目数',
                 type: 'bar',
                 barWidth: '30px',
                 data: personalArr[0]
@@ -86,7 +86,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         ],
         series: [
             {
-                name: '直接访问',
+                name: '项目数',
                 type: 'bar',
                 barWidth: '30px',
                 data: personalArr[1]
@@ -129,7 +129,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         ],
         series: [
             {
-                name: '直接访问',
+                name: '项目数',
                 type: 'bar',
                 barWidth: '30px',
                 data: personalArr[2]
@@ -172,7 +172,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         ],
         series: [
             {
-                name: '直接访问',
+                name: '项目数',
                 type: 'bar',
                 barWidth: '30px',
                 data: personalArr[3]
@@ -215,7 +215,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         ],
         series: [
             {
-                name: '直接访问',
+                name: '项目数',
                 type: 'bar',
                 barWidth: '30px',
                 data: personalArr[4]
@@ -258,7 +258,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         ],
         series: [
             {
-                name: '直接访问',
+                name: '项目数',
                 type: 'bar',
                 barWidth: '30px',
                 data: personalArr[5]
@@ -301,7 +301,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         ],
         series: [
             {
-                name: '直接访问',
+                name: '项目数',
                 type: 'bar',
                 barWidth: '30px',
                 data: personalArr[6]
@@ -344,7 +344,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         ],
         series: [
             {
-                name: '直接访问',
+                name: '项目数',
                 type: 'bar',
                 barWidth: '30px',
                 data: personalArr[7]
