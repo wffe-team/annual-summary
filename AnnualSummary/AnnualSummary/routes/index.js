@@ -37,8 +37,7 @@ router.get('/', function (req, res) {
                 }
             }
             //输出项目总数
-            console.log('总项目数：' + names.length);
-
+            // console.log('总项目数：' + names.length);
             //不同事业部项目数
             var totalItems = [];
             var otherItem = 0;
@@ -49,7 +48,7 @@ router.get('/', function (req, res) {
                 var singleNum = 0;
                 for (var j = 0; j < names.length; j++) {
                     if (names[j].indexOf(careerArr[i]) > -1 && names[j].indexOf(careerArr[i]) < 3) {
-                        singleNum++;                        
+                        singleNum++;
                     }
                 }
                 sum += singleNum;
@@ -57,10 +56,10 @@ router.get('/', function (req, res) {
             }
             otherItem = names.length - sum;
             totalItems.push(otherItem);
-            console.log(totalItems);
+            //  console.log(totalItems);
 
             //个人项目分布
-            var persoanlArr = [];            
+            var persoanlArr = [];
             for (var i = 0; i < idArr.length; i++) {
                 var personalItem = [];
                 var arr = [];
@@ -68,15 +67,15 @@ router.get('/', function (req, res) {
                 var other = 0;
                 //每个人的项目
                 for (var j = 0; j < card.length; j++) {
-                    if (card[j].idMembers.indexOf(idArr[i])> -1) {
+                    if (card[j].idMembers.indexOf(idArr[i]) > -1) {
                         personalItem.push(card[j].name);
                     }
                 }
                 for (var m = 0; m < careerArr.length; m++) {
-                    var single = 0;                    
+                    var single = 0;
                     for (var n = 0; n < personalItem.length; n++) {
                         if (personalItem[n].indexOf(careerArr[m]) > -1 && personalItem[n].indexOf(careerArr[m]) < 3) {
-                            single++; 
+                            single++;
                         }
                     }
                     total += single;
@@ -86,8 +85,8 @@ router.get('/', function (req, res) {
                 arr.push(other);
                 persoanlArr.push(arr);
 
-            }           
-     
+            }
+
             //参与项目人数最多
             var mNumber = [];
             for (var i = 0; i < obj.cards.length; i++) {
@@ -97,11 +96,11 @@ router.get('/', function (req, res) {
             //参与最多人数的个数
             var maxNumber = Math.max.apply(null, mNumber);
             //对应的索引
-            var maxNumberIndex = mNumber.indexOf(maxNumber); 
+            var maxNumberIndex = mNumber.indexOf(maxNumber);
             //参与人数最多的项目名称
             var maxNumberItemName = obj.cards[maxNumberIndex].name;
             //输出项目名称
-            console.log(maxNumberItemName);
+            //console.log(maxNumberItemName);
             //idMembersFullName
             var idMembersFullName = [];
             var idMembers = obj.cards[maxNumberIndex].idMembers;
@@ -110,13 +109,13 @@ router.get('/', function (req, res) {
                 for (var j = 0; j < obj.members.length; j++) {
                     var id = obj.members[j].id;
                     //限制年限
-                    if (idMembersItem == id || obj.cards[j].idListid == idList) {
+                    if (idMembersItem == id && obj.cards[maxNumberIndex].idList == idList) {
                         idMembersFullName.push(obj.members[j].fullName)
                     }
                 }
             }
             //输出成员姓名
-            console.log(idMembersFullName);
+            //console.log(idMembersFullName);
 
             res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr });
         }
