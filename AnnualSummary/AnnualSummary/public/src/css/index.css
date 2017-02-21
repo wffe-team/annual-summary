@@ -95,3 +95,14 @@ body .fullpage .section-six .position {
   bottom: 30px;
   right: 30px;
 }
+body .fullpage .section-seven {
+  font-family: dulcinea;
+  font-size: 144px;
+  color: #aa314d;
+  background-color: #707d8d;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'dulcinea';
+  src: url('../../font/dulcinea.otf') format('opentype');
+}
