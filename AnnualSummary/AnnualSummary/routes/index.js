@@ -36,8 +36,6 @@ router.get('/', function (req, res) {
                     card.push(obj.cards[i]);
                 }
             }
-            //输出项目总数
-            console.log('总项目数：' + names.length);
 
             //不同事业部项目数
             var totalItems = [];
@@ -57,7 +55,6 @@ router.get('/', function (req, res) {
             }
             otherItem = names.length - sum;
             totalItems.push(otherItem);
-            console.log(totalItems);
 
             //个人项目分布
             var persoanlArr = [];            
@@ -100,8 +97,6 @@ router.get('/', function (req, res) {
             var maxNumberIndex = mNumber.indexOf(maxNumber); 
             //参与人数最多的项目名称
             var maxNumberItemName = obj.cards[maxNumberIndex].name;
-            //输出项目名称
-            console.log(maxNumberItemName);
             //idMembersFullName
             var idMembersFullName = [];
             var idMembers = obj.cards[maxNumberIndex].idMembers;
@@ -115,8 +110,6 @@ router.get('/', function (req, res) {
                     }
                 }
             }
-            //输出成员姓名
-            console.log(idMembersFullName);
 
             res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr });
         }

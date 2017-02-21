@@ -70,8 +70,6 @@
     </Content>
     <Content Include="public\src\css\reset.css" />
     <Content Include="public\src\img\bg.png" />
-    <Content Include="public\src\img\cooperation.png" />
-    <Content Include="public\src\img\project.png" />
     <Content Include="README.md" />
     <Content Include="trellodata.json" />
     <Content Include="typings.json" />
