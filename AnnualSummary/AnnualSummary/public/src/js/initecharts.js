@@ -9,7 +9,7 @@
     var option = {
         tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b}: {c} ({d}%)"
+            formatter: "{b}<br/>{c} ({d}%)"
         },
         legend: {
             orient: 'vertical',
