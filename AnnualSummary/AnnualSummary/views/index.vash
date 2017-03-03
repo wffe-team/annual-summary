@@ -30,9 +30,9 @@
     </div>
     <div class="section section-four">
         @for(var i=0;i< model.persoanlArr.length;i++){
-            @for(var j=0;j< model.persoanlArr[i].length;j++){
-               <input class="personal-items" type="hidden" value="@model.persoanlArr[i][j]" />
-            }
+        @for(var j=0;j< model.persoanlArr[i].length;j++){
+        <input class="personal-items" type="hidden" value="@model.persoanlArr[i][j]" />
+        }
         }
         <div class="personal-chart" id="biChart"></div>
         <div class="personal-chart" id="yangChart"></div>
@@ -40,6 +40,9 @@
         <div class="personal-chart" id="luChart"></div>
     </div>
     <div class="section section-five">
+        @for(var i=0;i< model.careerArr.length;i++){
+        <input class="careerArr" type="hidden" value="@model.careerArr[i]" />
+        }
         <div class="personal-chart" id="liuChart"></div>
         <div class="personal-chart" id="zhangChart"></div>
         <div class="personal-chart" id="cuiChart"></div>
@@ -52,9 +55,9 @@
         <input type="hidden" class="idNumbersNames" value="@model.idNumbersNames[i]">
         }
     </div>
-	<div class="section section-seven">
-		The&nbsp;&nbsp; End !
-	</div>
+    <div class="section section-seven">
+        The&nbsp;&nbsp; End !
+    </div>
 </div>
     })
     @html.block('script', function(model){

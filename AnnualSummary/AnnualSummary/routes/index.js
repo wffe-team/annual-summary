@@ -42,7 +42,32 @@ router.get('/', function (req, res) {
             var totalItems = [];
             var otherItem = 0;
             var sum = 0;
-            var careerArr = ['高教', '企业', '医药', 'WFUI', '基教', 'Lab'];
+            //获得项目类的名称
+            var careerArrTest = [];
+            for (var i = 0; i < obj.cards.length; i++) {
+                var strIndex = obj.cards[i].name.indexOf(' -');
+                if (strIndex != -1) {
+                    var str = obj.cards[i].name;
+                    str = str.substring(0, strIndex);
+                    careerArrTest.push(str);
+                }
+            }
+            //除去重复项目类的名称
+            var careerArr;
+            Array.prototype.unique = function () {
+                careerArr = [];
+                var json = {};
+                for (var i = 0; i < this.length; i++) {
+                    if (!json[this[i]]) {
+                        careerArr.push(this[i]);
+                        json[this[i]] = 1;
+                    }
+                }
+                return careerArr;
+            }
+            careerArrTest.unique();
+            //输出各个项目类的名称careerArr
+           // console.log(careerArr);
             totalItems.push(names.length);
             for (var i = 0; i < careerArr.length; i++) {
                 var singleNum = 0;
@@ -115,7 +140,7 @@ router.get('/', function (req, res) {
             }
             //输出成员姓名
             //console.log(idMembersFullName);
-            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr });
+            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr, careerArr: careerArr });
         }
     });
 

@@ -8,6 +8,13 @@ var personalArr = [];
 for (var i = 0; i < arrItems.length - 1; i = i + 7) {
     personalArr.push([arrItems[i], arrItems[i + 1], arrItems[i + 2], arrItems[i + 3], arrItems[i + 4], arrItems[i + 5], arrItems[i + 6]]);
 }
+
+var persoanlArr = [];
+$('.careerArr').each(function () {
+    persoanlArrVal = $(this).val();
+    persoanlArr.push(persoanlArrVal);
+})
+console.log(persoanlArr);
 (function () {    
     var myChart = echarts.init(document.getElementById('biChart'));
     var option = {
@@ -30,7 +37,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         xAxis: [
             {
                 type: 'category',
-                data: ['高教', '企业', '医药', 'WFUI', '基教','Lab','其他'],
+                data: persoanlArr,
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -73,7 +80,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         xAxis: [
             {
                 type: 'category',
-                data: ['高教', '企业', '医药', 'WFUI', '基教','Lab','其他'],
+                data: persoanlArr,
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -116,7 +123,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         xAxis: [
             {
                 type: 'category',
-                data: ['高教', '企业', '医药', 'WFUI', '基教','Lab','其他'],
+                data: persoanlArr,
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -159,7 +166,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         xAxis: [
             {
                 type: 'category',
-                data: ['高教', '企业', '医药', 'WFUI', '基教','Lab','其他'],
+                data: persoanlArr,
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -202,7 +209,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         xAxis: [
             {
                 type: 'category',
-                data: ['高教', '企业', '医药', 'WFUI', '基教','Lab','其他'],
+                data: persoanlArr,
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -245,7 +252,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         xAxis: [
             {
                 type: 'category',
-                data: ['高教', '企业', '医药', 'WFUI', '基教','Lab','其他'],
+                data: persoanlArr,
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -288,7 +295,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         xAxis: [
             {
                 type: 'category',
-                data: ['高教', '企业', '医药', 'WFUI', '基教','Lab','其他'],
+                data: persoanlArr,
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -331,7 +338,7 @@ for (var i = 0; i < arrItems.length - 1; i = i + 7) {
         xAxis: [
             {
                 type: 'category',
-                data: ['高教', '企业', '医药', 'WFUI', '基教','Lab','其他'],
+                data: persoanlArr,
                 axisTick: {
                     alignWithLabel: true
                 }
