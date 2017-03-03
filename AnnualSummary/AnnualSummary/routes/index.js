@@ -111,6 +111,20 @@ router.get('/', function (req, res) {
                 persoanlArr.push(arr);
             }
 
+
+            //Labels各个标签对应项目的数量
+            //所有项目的标签
+            var labels = [];
+          
+            for (var i = 0; i < obj.cards.length; i++) {
+                var label = obj.cards[i].labels;
+                for (var j = 0; j < label.length; j++) {
+                    console.log(obj.cards[i].labels[j].color);
+                }
+            }
+            //限定年限2016
+           //console.log(obj.labelNames);
+
             //参与项目人数最多
             var mNumber = [];
             for (var i = 0; i < obj.cards.length; i++) {
