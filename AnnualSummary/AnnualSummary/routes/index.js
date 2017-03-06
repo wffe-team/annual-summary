@@ -167,6 +167,22 @@ router.get('/', function (req, res) {
             console.log(colorName); 
 
             /**
+             * pause的项目名称
+             */
+
+            //假设需要Pause的项目名称
+            var pause = 'Pause';
+            var pauseItems = [];
+           // var itemsIndex = ' -';是否只输出项目的名称
+            for (var i = 0; i < obj.actions.length; i++) {
+                if (obj.actions[i].data.listAfter != undefined && obj.actions[i].data.listAfter.name == pause) {
+                    pauseItems.push(obj.actions[i].data.card.name);
+                }
+            } 
+            //输出Pause的项目名称
+            console.log(pauseItems);
+
+            /**
              * 参与项目人数最多
              */
 
