@@ -139,8 +139,7 @@ router.get('/', function (req, res) {
             for (var i = 0; i < obj.cards.length; i++) {
                 //限定年限
                 if (obj.cards[i].idList == idList) {
-                    var label = obj.cards[i].labels;
-                    for (var j = 0; j < label.length; j++) {
+                    for (var j = 0; j < obj.cards[i].labels.length; j++) {
                         labels.push(obj.cards[i].labels[j].color);
                         if (obj.cards[i].labels[j].color == color) {
                             colorName.push(obj.cards[i].name);
@@ -165,6 +164,31 @@ router.get('/', function (req, res) {
             console.log(lablesNumber);
             //输出color是red的项目名称（colorName）
             console.log(colorName); 
+
+            /**
+             *  项目完成状态
+             */
+            var falseItems = [];
+            var trueItems = [];
+            var completeItems = [];
+
+            for (var i = 0; i < obj.cards.length; i++) {
+                if (obj.cards[i].due != null) {
+                    if (obj.cards[i].dueComplete == true) {
+                        trueItems.push(obj.cards[i].name);
+                        completeItems.push(obj.cards[i].name);
+                    } else {
+                        falseItems.push(obj.cards[i].name);
+                        completeItems.push(obj.cards[i].name);
+                    }
+                }
+            }
+            //设定时间项目
+            console.log(completeItems);
+            //设定时间完成的项目
+            console.log(trueItems);
+            //设定时间未完成的项目
+            console.log(falseItems);
 
             /**
              * pause的项目名称
