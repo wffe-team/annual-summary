@@ -5,6 +5,15 @@
         itemnum = $(this).val();
         arrItems.push(itemnum)
     });
+
+    var persoanlArrTotle = [];
+    $('.careerArr').each(function () {
+        persoanlArrVal = $(this).val();
+        persoanlArrTotle.push(persoanlArrVal);
+    })
+   
+    persoanlArrTotle.push('其他');
+
     var myChart = echarts.init(document.getElementById('career-chart'));        
     var option = {
         tooltip: {
@@ -14,7 +23,7 @@
         legend: {
             orient: 'vertical',
             x: 'left',
-            data: ['高教', '企业', '医药','WFUI','基教','Lab','其他']
+            data: persoanlArrTotle
         },
         series: [
             {
@@ -41,13 +50,13 @@
                     }
                 },
                 data: [
-                    { value: arrItems[1], name: '高教' },
-                    { value: arrItems[2], name: '企业' },
-                    { value: arrItems[3], name: '医药' },
-                    { value: arrItems[4], name: 'WFUI' },
-                    { value: arrItems[5], name: '基教' },
-                    { value: arrItems[6], name: 'Lab' },
-                    { value: arrItems[7], name: '其他' }
+                    { value: arrItems[1], name: persoanlArrTotle[0] },
+                    { value: arrItems[2], name: persoanlArrTotle[1] },
+                    { value: arrItems[3], name: persoanlArrTotle[2] },
+                    { value: arrItems[4], name: persoanlArrTotle[3] },
+                    { value: arrItems[5], name: persoanlArrTotle[4] },
+                    { value: arrItems[6], name: persoanlArrTotle[5] },
+                    { value: arrItems[7], name: persoanlArrTotle[6] }
                 ]
             }
         ]

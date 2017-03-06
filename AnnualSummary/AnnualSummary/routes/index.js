@@ -42,6 +42,7 @@ router.get('/', function (req, res) {
             var totalItems = [];
             var otherItem = 0;
             var sum = 0;
+       
             //获得项目类的名称
             var careerArrTest = [];
             for (var i = 0; i < obj.cards.length; i++) {
@@ -67,7 +68,6 @@ router.get('/', function (req, res) {
             }
             careerArrTest.unique();
             //输出各个项目类的名称careerArr
-           // console.log(careerArr);
             totalItems.push(names.length);
             for (var i = 0; i < careerArr.length; i++) {
                 var singleNum = 0;
@@ -81,8 +81,6 @@ router.get('/', function (req, res) {
             }
             otherItem = names.length - sum;
             totalItems.push(otherItem);
-            //console.log(totalItems);
-
             //个人项目分布
             var persoanlArr = [];
             for (var i = 0; i < idArr.length; i++) {
@@ -113,17 +111,26 @@ router.get('/', function (req, res) {
 
 
             //Labels各个标签对应项目的数量
+
+            //默认设置的标签类型
+            var labelsName = [];
+            for (x in obj.labelNames) {
+                labelsName.push(x)
+            }
+            console.log(labelsName);
+
             //所有项目的标签
             var labels = [];
-          
             for (var i = 0; i < obj.cards.length; i++) {
-                var label = obj.cards[i].labels;
-                for (var j = 0; j < label.length; j++) {
-                    console.log(obj.cards[i].labels[j].color);
+                //限定年限
+                if (obj.cards[i].idList == idList) {
+                    var label = obj.cards[i].labels;
+                    for (var j = 0; j < label.length; j++) {
+                        labels.push(obj.cards[i].labels[j].color);
+                    }
                 }
             }
-            //限定年限2016
-           //console.log(obj.labelNames);
+            console.log(labels);
 
             //参与项目人数最多
             var mNumber = [];

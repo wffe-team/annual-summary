@@ -13,8 +13,8 @@ var persoanlArr = [];
 $('.careerArr').each(function () {
     persoanlArrVal = $(this).val();
     persoanlArr.push(persoanlArrVal);
-})
-console.log(persoanlArr);
+});
+
 (function () {    
     var myChart = echarts.init(document.getElementById('biChart'));
     var option = {
