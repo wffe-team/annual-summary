@@ -9,7 +9,11 @@ router.get('/', function (req, res) {
             return console.error(err);
         } else {
             var obj = JSON.parse(data);
-            //前端成员
+
+          /**
+           * 前端成员
+           */
+            
             var fullNameArr = [];
             var idArr = [];//前端成员id
             for (var i = 0; i < obj.members.length; i++) {
@@ -18,7 +22,11 @@ router.get('/', function (req, res) {
                 fullNameArr.push(fullName);
                 idArr.push(id);
             }
-            //总项目
+
+            /**
+             * 总项目
+             */
+
             var year = '2016';//设置不同年限的
             var idList;
             for (var i = 0; i < obj.lists.length; i++) {
@@ -81,7 +89,11 @@ router.get('/', function (req, res) {
             }
             otherItem = names.length - sum;
             totalItems.push(otherItem);
-            //个人项目分布
+
+            /**
+             * 个人项目分布
+             */
+
             var persoanlArr = [];
             for (var i = 0; i < idArr.length; i++) {
                 var personalItem = [];
@@ -109,30 +121,55 @@ router.get('/', function (req, res) {
                 persoanlArr.push(arr);
             }
 
+            /**
+             * Labels各个标签对应项目的数量
+             */
 
-            //Labels各个标签对应项目的数量
-
-            //默认设置的标签类型
+            //默认设置的标签类型 （labelsName）
             var labelsName = [];
             for (x in obj.labelNames) {
                 labelsName.push(x)
             }
-            console.log(labelsName);
-
-            //所有项目的标签
+            //所有项目的标签 （labels）
+            //输出各个类型标签所对应的项目类型 （colorName）
+            //假定需要输出有上线压力的项目名称 （color）
             var labels = [];
+            var color = 'red';
+            var colorName = [];
             for (var i = 0; i < obj.cards.length; i++) {
                 //限定年限
                 if (obj.cards[i].idList == idList) {
                     var label = obj.cards[i].labels;
                     for (var j = 0; j < label.length; j++) {
                         labels.push(obj.cards[i].labels[j].color);
+                        if (obj.cards[i].labels[j].color == color) {
+                            colorName.push(obj.cards[i].name);
+                        }
                     }
                 }
             }
-            console.log(labels);
+            //各个标签的数量（lablesNumber）
+            var lablesNumber = [];
+            for (var i = 0; i < labelsName.length; i++) {
+                var iNum = 0;
+                for (var j = 0; j < labels.length; j++) {
+                    if (labelsName[i] ==labels[j]) {
+                        iNum++;
+                    }
+                }
+                lablesNumber.push(iNum);
+            }
 
-            //参与项目人数最多
+            //输出各个标签 （labelsName）以及对应的数量(lablesNumber)
+            console.log(labelsName);
+            console.log(lablesNumber);
+            //输出color是red的项目名称（colorName）
+            console.log(colorName); 
+
+            /**
+             * 参与项目人数最多
+             */
+
             var mNumber = [];
             for (var i = 0; i < obj.cards.length; i++) {
                 var membersLength = obj.cards[i].idMembers.length;
