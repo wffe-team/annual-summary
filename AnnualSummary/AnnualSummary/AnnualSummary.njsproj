@@ -40,6 +40,7 @@
     <Compile Include="public\src\js\initecharts.js" />
     <Compile Include="public\src\js\initfullpage.js" />
     <Compile Include="public\src\js\initItemsCharts.js" />
+    <Compile Include="public\src\js\initLabelsItem.js" />
     <Compile Include="public\src\js\initPersonalCharts.js" />
     <Compile Include="public\src\js\initSetEndTimeItems.js" />
     <Compile Include="routes\index.js" />

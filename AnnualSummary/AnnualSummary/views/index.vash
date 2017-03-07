@@ -55,6 +55,16 @@
         <input type="hidden" class="idNumbersNames" value="@model.idNumbersNames[i]">
         }
     </div>
+    <div class="section section-nine">
+        @for(var i=0;i< model.labelsName.length;i++){
+        <input type="hidden" class="labelsName" value="@model.labelsName[i]"/>
+        }
+        @for(var i=0;i< model.lablesNumber.length;i++){
+        <input type="hidden" class="lablesNumber" value="@model.lablesNumber[i]"/>
+        }
+        <h1 class="labels-h1">labels各个类型对应项目的数量：</h1>
+        <div id="labelsItems"></div>
+    </div>
     <div class="section section-seven">
         <h1 class="pause-h1">Pause过的项目：</h1>
         <br />
@@ -91,5 +101,6 @@
 <script src="../src/js/initPersonalCharts.js"></script>
 <script src="../src/js/initItemsCharts.js"></script>
 <script src="../src/js/initSetEndTimeItems.js"></script>
+<script src="../src/js/initLabelsItem.js"></script>
     })
 })

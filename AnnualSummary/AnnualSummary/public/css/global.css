@@ -120,11 +120,22 @@ body .fullpage .section-eight .rt {
 body .fullpage .section-eight .completeItems-h1 {
   font-size: 48px;
   color: #707d8d;
-  margin-top: -100px;
 }
 body .fullpage .section-eight .completeItems-text {
   font-size: 20px;
   line-height: 36px;
+}
+body .fullpage .section-nine {
+  background-color: #f0f4fa;
+}
+body .fullpage .section-nine .labels-h1 {
+  font-size: 48px;
+  color: #707d8d;
+}
+body .fullpage .section-nine #labelsItems {
+  margin: 0 auto;
+  height: 500px;
+  width: 80%;
 }
 body .fullpage .section-end {
   font-family: dulcinea;

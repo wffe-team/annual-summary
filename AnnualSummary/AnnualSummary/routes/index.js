@@ -161,10 +161,10 @@ router.get('/', function (req, res) {
                 lablesNumber.push(iNum);
             }
             //输出各个标签 （labelsName）以及对应的数量(lablesNumber)
-            console.log(labelsName);
-            console.log(lablesNumber);
+           // console.log(labelsName);
+            //console.log(lablesNumber);
             //输出color是red的项目名称（colorName）
-            console.log(colorName); 
+          //  console.log(colorName); 
 
             /**
              *  项目完成状态
@@ -206,11 +206,11 @@ router.get('/', function (req, res) {
                 strEndDateArr.push(strEndDateNumber);
             }
             //设定时间项目
-            console.log(completeItems);
+           // console.log(completeItems);
             //项目类别
-            console.log(careerArr);
+           // console.log(careerArr);
             //设定时间项目对用项目类别的数量
-            console.log(strEndDateArr);
+          //  console.log(strEndDateArr);
             //设定时间完成的项目
             //console.log(trueItems);
             //设定时间未完成的项目
@@ -267,7 +267,7 @@ router.get('/', function (req, res) {
             }
             //输出成员姓名
             //console.log(idMembersFullName);
-            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr, careerArr: careerArr, pauseItems: pauseItems, completeItems: completeItems, strEndDateArr: strEndDateArr});
+            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr, careerArr: careerArr, pauseItems: pauseItems, completeItems: completeItems, strEndDateArr: strEndDateArr, labelsName: labelsName, lablesNumber: lablesNumber});
         }
     });
 
