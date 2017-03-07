@@ -10,10 +10,10 @@ router.get('/', function (req, res) {
         } else {
             var obj = JSON.parse(data);
 
-          /**
-           * 前端成员
-           */
-            
+            /**
+             * 前端成员
+             */
+
             var fullNameArr = [];
             var idArr = [];//前端成员id
             for (var i = 0; i < obj.members.length; i++) {
@@ -52,7 +52,7 @@ router.get('/', function (req, res) {
             var totalItems = [];
             var otherItem = 0;
             var sum = 0;
-       
+
             //获得项目类的名称
             var careerArrTest = [];
             for (var i = 0; i < obj.cards.length; i++) {
@@ -108,16 +108,17 @@ router.get('/', function (req, res) {
                         personalItem.push(card[j].name);
                     }
                 }
-                for (var m = 0; m < careerArr.length; m++) {
-                    var single = 0;
-                    for (var n = 0; n < personalItem.length; n++) {
-                        if (personalItem[n].indexOf(careerArr[m]) > -1 && personalItem[n].indexOf(careerArr[m]) < 3) {
-                            single++;
-                        }
-                    }
-                    total += single;
-                    arr.push(single);
-                }
+                count(careerArr, personalItem);
+                //for (var m = 0; m < careerArr.length; m++) {
+                //    var single = 0;
+                //    for (var n = 0; n < personalItem.length; n++) {
+                //        if (personalItem[n].indexOf(careerArr[m]) > -1 && personalItem[n].indexOf(careerArr[m]) < 3) {
+                //            single++;
+                //        }
+                //    }
+                //    total += single;
+                //    arr.push(single);
+                //}
                 other = personalItem.length - total;
                 arr.push(other);
                 persoanlArr.push(arr);
@@ -136,17 +137,10 @@ router.get('/', function (req, res) {
             //输出各个类型标签所对应的项目类型 （colorName）
             //假定需要输出有上线压力的项目名称 （color）
             var labels = [];
-            var color = 'red';
-            var colorName = [];
-            for (var i = 0; i < obj.cards.length; i++) {
-                //限定年限
-                if (obj.cards[i].idList == idList) {
-                    for (var j = 0; j < obj.cards[i].labels.length; j++) {
-                        labels.push(obj.cards[i].labels[j].color);
-                        if (obj.cards[i].labels[j].color == color) {
-                            colorName.push(obj.cards[i].name);
-                        }
-                    }
+            for (var i = 0; i < card.length; i++) {
+                var label = card[i].labels;
+                for (var j = 0; j < label.length; j++) {
+                    labels.push(card[i].labels[j].color);
                 }
             }
             //各个标签的数量（lablesNumber）
@@ -154,17 +148,55 @@ router.get('/', function (req, res) {
             for (var i = 0; i < labelsName.length; i++) {
                 var iNum = 0;
                 for (var j = 0; j < labels.length; j++) {
-                    if (labelsName[i] ==labels[j]) {
+                    if (labelsName[i] == labels[j]) {
                         iNum++;
                     }
                 }
                 lablesNumber.push(iNum);
             }
             //输出各个标签 （labelsName）以及对应的数量(lablesNumber)
-           // console.log(labelsName);
-            //console.log(lablesNumber);
-            //输出color是red的项目名称（colorName）
-          //  console.log(colorName); 
+            console.log(labelsName);
+            console.log(lablesNumber);
+
+            //按工作量查询各事业部的项目
+            var itemsArr = [];            
+            var itemArr;
+            for (var k = 0; k < labelsName.length; k++) {
+                itemArr = [];
+                var arr = [];
+                var total = 0;
+                var other = 0;
+                for (var i = 0; i < card.length; i++) {
+                    for (var j = 0; j < card[i].labels.length; j++) {
+                        if (labelsName[k] == card[i].labels[j].color) {
+                            itemArr.push(card[i].name);
+                        }
+                    }                   
+                }
+                count(careerArr, itemArr);
+                other = itemArr.length - total;
+                arr.push(other);
+                //persoanlArr.push(arr);
+                itemsArr.push(arr);
+            }
+            console.log(itemsArr);
+
+            //统计各事业部的项目数函数
+            function count(all, item) {
+                for (var m = 0; m < all.length; m++) {
+                    var single = 0;
+                    for (var n = 0; n < item.length; n++) {
+                        if (item[n].indexOf(all[m]) > -1 && item[n].indexOf(all[m]) < 3) {
+                            single++;
+                        }
+                    }
+                    total += single;
+                    arr.push(single);
+                }
+            }
+
+
+
 
             /**
              *  项目完成状态
