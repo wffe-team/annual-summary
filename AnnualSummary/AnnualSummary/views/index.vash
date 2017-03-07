@@ -56,11 +56,25 @@
         }
     </div>
     <div class="section section-seven">
-        <h1 class="pause-h1" >Pause过的项目：</h1>
-        <br/>
+        <h1 class="pause-h1">Pause过的项目：</h1>
+        <br />
         @for(var i=0;i< model.pauseItems.length;i++){
         <div class="pause-text">@model.pauseItems[i]</div>
         }
+    </div>
+    <div class="section section-eight">
+        <h1 class="completeItems-h1">有<span>@model.completeItems.length</span>个设置结束日期的项目：</h1>
+        <br />
+        <div class="lt">
+            @for(var i=0;i< model.completeItems.length;i++){
+            <div class="completeItems-text">@model.completeItems[i]</div>
+            }
+            @for(var i=0;i< model.strEndDateArr.length;i++){
+            <input type="hidden" class="strEndDateArr" value="@model.strEndDateArr[i]" />
+            }
+        </div>
+       
+        <div class="rt" id="setendtime"></div>
     </div>
     <div class="section section-end">
         The&nbsp;&nbsp; End !
@@ -76,5 +90,6 @@
 <script src="../src/js/initecharts.js"></script>
 <script src="../src/js/initPersonalCharts.js"></script>
 <script src="../src/js/initItemsCharts.js"></script>
+<script src="../src/js/initSetEndTimeItems.js"></script>
     })
 })

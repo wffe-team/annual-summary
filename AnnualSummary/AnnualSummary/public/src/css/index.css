@@ -99,10 +99,30 @@ body .fullpage .section-seven {
   background-color: #f0f4fa;
 }
 body .fullpage .section-seven .pause-h1 {
-  font-size: 40px;
+  font-size: 48px;
+  color: #707d8d;
   margin-top: -100px;
 }
 body .fullpage .section-seven .pause-text {
+  font-size: 20px;
+  line-height: 36px;
+}
+body .fullpage .section-eight {
+  background-color: #f0f4fa;
+}
+body .fullpage .section-eight .lt,
+body .fullpage .section-eight .rt {
+  float: left;
+  margin-top: 150px;
+  width: 50%;
+  height: 500px;
+}
+body .fullpage .section-eight .completeItems-h1 {
+  font-size: 48px;
+  color: #707d8d;
+  margin-top: -100px;
+}
+body .fullpage .section-eight .completeItems-text {
   font-size: 20px;
   line-height: 36px;
 }

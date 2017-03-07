@@ -27,6 +27,8 @@ router.get('/', function (req, res) {
              * 总项目
              */
 
+            //var date = new Date();
+            //var year = date.getFullYear();
             var year = '2016';//设置不同年限的
             var idList;
             for (var i = 0; i < obj.lists.length; i++) {
@@ -158,7 +160,6 @@ router.get('/', function (req, res) {
                 }
                 lablesNumber.push(iNum);
             }
-
             //输出各个标签 （labelsName）以及对应的数量(lablesNumber)
             console.log(labelsName);
             console.log(lablesNumber);
@@ -168,6 +169,7 @@ router.get('/', function (req, res) {
             /**
              *  项目完成状态
              */
+
             var falseItems = [];
             var trueItems = [];
             var completeItems = [];
@@ -175,20 +177,44 @@ router.get('/', function (req, res) {
             for (var i = 0; i < obj.cards.length; i++) {
                 if (obj.cards[i].due != null) {
                     if (obj.cards[i].dueComplete == true) {
-                        trueItems.push(obj.cards[i].name);
-                        completeItems.push(obj.cards[i].name);
+                        itemsIndex = obj.cards[i].name.indexOf(' -');
+                        if (itemsIndex != -1) {
+                            trueItems.push(obj.cards[i].name);
+                            completeItems.push(obj.cards[i].name);
+                        }
                     } else {
-                        falseItems.push(obj.cards[i].name);
-                        completeItems.push(obj.cards[i].name);
+                        itemsIndex = obj.cards[i].name.indexOf(' -');
+                        if (itemsIndex != -1) {
+                            falseItems.push(obj.cards[i].name);
+                            completeItems.push(obj.cards[i].name);
+                        }
                     }
                 }
             }
+            var strEndDate;
+            var strEndDateNumber;
+            var strEndDateArr = [];
+            for (var i = 0; i < careerArr.length; i++) {
+                strEndDateNumber = 0;
+                for (var j = 0; j < completeItems.length; j++) {
+                    itemsIndex = completeItems[j].indexOf(' -');
+                    strEndDate = completeItems[j].substring(0, itemsIndex);
+                    if (careerArr[i] == strEndDate) {
+                        strEndDateNumber++;
+                    }
+                }
+                strEndDateArr.push(strEndDateNumber);
+            }
             //设定时间项目
             console.log(completeItems);
+            //项目类别
+            console.log(careerArr);
+            //设定时间项目对用项目类别的数量
+            console.log(strEndDateArr);
             //设定时间完成的项目
-            console.log(trueItems);
+            //console.log(trueItems);
             //设定时间未完成的项目
-            console.log(falseItems);
+            // console.log(falseItems);
 
             /**
              * pause的项目名称
@@ -241,7 +267,7 @@ router.get('/', function (req, res) {
             }
             //输出成员姓名
             //console.log(idMembersFullName);
-            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr, careerArr: careerArr, pauseItems: pauseItems });
+            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr, careerArr: careerArr, pauseItems: pauseItems, completeItems: completeItems, strEndDateArr: strEndDateArr});
         }
     });
 
