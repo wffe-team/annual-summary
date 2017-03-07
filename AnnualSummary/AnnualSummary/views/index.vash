@@ -65,6 +65,18 @@
         <h1 class="labels-h1">Labels各个类型对应项目的数量：</h1>
         <div id="labelsItems"></div>
     </div>
+    <div class="section section-ten">
+        @for(var i=0;i< model.itemsArr.length;i++){
+        @for(var j=0;j< model.itemsArr[i].length;j++){
+        <input class="labels-items" type="hidden" value="@model.itemsArr[i][j]" />
+        }
+        }
+        <div class="color-chart" id="green"></div>
+        <div class="color-chart" id="red"></div>
+        <div class="color-chart" id="purple"></div>
+        <div class="color-chart" id="blue"></div>
+        <div class="color-chart" id="black"></div>
+    </div>
     <div class="section section-seven">
         <h1 class="pause-h1"><span class="pause">Pause</span>过的项目：</h1>
         <br />
@@ -85,18 +97,7 @@
         </div>      
         <div class="rt" id="setendtime"></div>
     </div>
-    <div class="section section-nine">
-        @for(var i=0;i< model.itemsArr.length;i++){
-        @for(var j=0;j< model.itemsArr[i].length;j++){
-        <input class="labels-items" type="hidden" value="@model.itemsArr[i][j]" />
-        }
-        }
-        <div class="personal-chart" id="biChart"></div>
-        <div class="personal-chart" id="yangChart"></div>
-        <div class="personal-chart" id="liChart"></div>
-        <div class="personal-chart" id="luChart"></div>
-        <div class="personal-chart" id="luChart"></div>
-    </div>
+    
     <div class="section section-end">
         The&nbsp;&nbsp; End !
     </div>
@@ -113,5 +114,6 @@
 <script src="../src/js/initItemsCharts.js"></script>
 <script src="../src/js/initSetEndTimeItems.js"></script>
 <script src="../src/js/initLabelsItem.js"></script>
+<script src="../src/js/initLabels.js"></script>
     })
 })

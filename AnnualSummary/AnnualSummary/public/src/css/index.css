@@ -148,6 +148,15 @@ body .fullpage .section-nine #labelsItems {
   height: 500px;
   width: 80%;
 }
+body .fullpage .section-ten .color-chart {
+  width: 33%;
+  height: 300px;
+  text-align: center;
+  display: inline-block;
+}
+body .fullpage .section-ten .color-chart canvas {
+  width: 100%!important;
+}
 body .fullpage .section-end {
   font-family: dulcinea;
   font-size: 144px;

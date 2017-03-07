@@ -1,6 +1,6 @@
 ﻿var itemnum;
 var arrItems = [];
-$('.personal-items').each(function () {
+$('.labels-items').each(function () {
     itemnum = $(this).val();
     arrItems.push(itemnum)
 });
@@ -15,10 +15,10 @@ $('.careerArr').each(function () {
     persoanlArr.push(persoanlArrVal);
 });
 persoanlArr.push('其他');
-(function () {    
-    var myChart = echarts.init(document.getElementById('biChart'));
+(function () {
+    var myChart = echarts.init(document.getElementById('green'));
     var option = {
-        color: ['#707d8d'],
+        color: ['green'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -26,7 +26,7 @@ persoanlArr.push('其他');
             }
         },
         title: {
-            text: '刘悦'
+            text: 'green'
         },
         grid: {
             left: '3%',
@@ -52,16 +52,16 @@ persoanlArr.push('其他');
             {
                 name: '项目数',
                 type: 'bar',
-                barWidth: '30px',
+                barWidth: '60%',
                 data: personalArr[0]
             }
         ]
-    };    myChart.setOption(option);
+    }; myChart.setOption(option);
 })();
 (function () {
-    var myChart = echarts.init(document.getElementById('yangChart'));
+    var myChart = echarts.init(document.getElementById('red'));
     var option = {
-        color: ['#707d8d'],
+        color: ['red'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -69,7 +69,7 @@ persoanlArr.push('其他');
             }
         },
         title: {
-            text: '安晓凯'
+            text: 'red'
         },
         grid: {
             left: '3%',
@@ -95,16 +95,16 @@ persoanlArr.push('其他');
             {
                 name: '项目数',
                 type: 'bar',
-                barWidth: '30px',
+                barWidth: '60%',
                 data: personalArr[1]
             }
         ]
     }; myChart.setOption(option);
 })();
 (function () {
-    var myChart = echarts.init(document.getElementById('liChart'));
+    var myChart = echarts.init(document.getElementById('purple'));
     var option = {
-        color: ['#707d8d'],
+        color: ['purple'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -112,7 +112,7 @@ persoanlArr.push('其他');
             }
         },
         title: {
-            text: '崔微娜'
+            text: 'purple'
         },
         grid: {
             left: '3%',
@@ -138,16 +138,16 @@ persoanlArr.push('其他');
             {
                 name: '项目数',
                 type: 'bar',
-                barWidth: '30px',
+                barWidth: '60%',
                 data: personalArr[2]
             }
         ]
     }; myChart.setOption(option);
 })();
 (function () {
-    var myChart = echarts.init(document.getElementById('luChart'));
+    var myChart = echarts.init(document.getElementById('blue'));
     var option = {
-        color: ['#707d8d'],
+        color: ['blue'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -155,7 +155,7 @@ persoanlArr.push('其他');
             }
         },
         title: {
-            text: '张凯迪'
+            text: 'blue'
         },
         grid: {
             left: '3%',
@@ -181,16 +181,16 @@ persoanlArr.push('其他');
             {
                 name: '项目数',
                 type: 'bar',
-                barWidth: '30px',
+                barWidth: '60%',
                 data: personalArr[3]
             }
         ]
     }; myChart.setOption(option);
 })();
 (function () {
-    var myChart = echarts.init(document.getElementById('liuChart'));
+    var myChart = echarts.init(document.getElementById('black'));
     var option = {
-        color: ['#707d8d'],
+        color: ['#000'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -198,7 +198,7 @@ persoanlArr.push('其他');
             }
         },
         title: {
-            text: '李利'
+            text: 'black'
         },
         grid: {
             left: '3%',
@@ -224,137 +224,8 @@ persoanlArr.push('其他');
             {
                 name: '项目数',
                 type: 'bar',
-                barWidth: '30px',
+                barWidth: '60%',
                 data: personalArr[4]
-            }
-        ]
-    }; myChart.setOption(option);
-})();
-(function () {
-    var myChart = echarts.init(document.getElementById('zhangChart'));
-    var option = {
-        color: ['#707d8d'],
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
-        title: {
-            text: '杨明'
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis: [
-            {
-                type: 'category',
-                data: persoanlArr,
-                axisTick: {
-                    alignWithLabel: true
-                }
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value'
-            }
-        ],
-        series: [
-            {
-                name: '项目数',
-                type: 'bar',
-                barWidth: '30px',
-                data: personalArr[5]
-            }
-        ]
-    }; myChart.setOption(option);
-})();
-(function () {
-    var myChart = echarts.init(document.getElementById('cuiChart'));
-    var option = {
-        color: ['#707d8d'],
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
-        title: {
-            text: '毕山山'
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis: [
-            {
-                type: 'category',
-                data: persoanlArr,
-                axisTick: {
-                    alignWithLabel: true
-                }
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value'
-            }
-        ],
-        series: [
-            {
-                name: '项目数',
-                type: 'bar',
-                barWidth: '30px',
-                data: personalArr[6]
-            }
-        ]
-    }; myChart.setOption(option);
-})();
-(function () {
-    var myChart = echarts.init(document.getElementById('anChart'));
-    var option = {
-        color: ['#707d8d'],
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-        },
-        title: {
-            text: '鹿丹'
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        xAxis: [
-            {
-                type: 'category',
-                data: persoanlArr,
-                axisTick: {
-                    alignWithLabel: true
-                }
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value'
-            }
-        ],
-        series: [
-            {
-                name: '项目数',
-                type: 'bar',
-                barWidth: '30px',
-                data: personalArr[7]
             }
         ]
     }; myChart.setOption(option);
