@@ -56,6 +56,13 @@
         }
     </div>
     <div class="section section-seven">
+        <h1 class="pause-h1" >Pause过的项目：</h1>
+        <br/>
+        @for(var i=0;i< model.pauseItems.length;i++){
+        <div class="pause-text">@model.pauseItems[i]</div>
+        }
+    </div>
+    <div class="section section-end">
         The&nbsp;&nbsp; End !
     </div>
 </div>
