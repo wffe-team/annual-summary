@@ -1,3 +1,3 @@
-﻿$(document).ready(function () {
+﻿$(function () {
     $('#fullpage').fullpage();
-});
+})

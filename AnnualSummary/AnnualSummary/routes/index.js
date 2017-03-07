@@ -231,12 +231,14 @@ router.get('/', function (req, res) {
                 }
                 strEndDateArr.push(strEndDateNumber);
             }
+            //sort处理
+            completeItems = completeItems.sort()
             //设定时间项目
-            console.log(completeItems);
+            // console.log(completeItems);
             //项目类别
-            console.log(careerArr);
+           // console.log(careerArr);
             //设定时间项目对用项目类别的数量
-            console.log(strEndDateArr);
+          //  console.log(strEndDateArr);
             //设定时间完成的项目
             //console.log(trueItems);
             //设定时间未完成的项目
@@ -295,7 +297,7 @@ router.get('/', function (req, res) {
             //console.log(idMembersFullName);
             res.render('index', {
                 value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr,
-                careerArr: careerArr, pauseItems: pauseItems, completeItems: completeItems, strEndDateArr: strEndDateArr, itemsArr: itemsArr
+                careerArr: careerArr, pauseItems: pauseItems, completeItems: completeItems, strEndDateArr: strEndDateArr,labelsName: labelsName, lablesNumber: lablesNumber,itemsArr: itemsArr
             });
         }
     });
