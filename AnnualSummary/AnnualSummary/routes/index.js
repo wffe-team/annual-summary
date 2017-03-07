@@ -195,9 +195,6 @@ router.get('/', function (req, res) {
                 }
             }
 
-
-
-
             /**
              *  项目完成状态
              */
@@ -237,8 +234,10 @@ router.get('/', function (req, res) {
                 }
                 strEndDateArr.push(strEndDateNumber);
             }
+            //sort处理
+            completeItems = completeItems.sort()
             //设定时间项目
-           // console.log(completeItems);
+            // console.log(completeItems);
             //项目类别
            // console.log(careerArr);
             //设定时间项目对用项目类别的数量

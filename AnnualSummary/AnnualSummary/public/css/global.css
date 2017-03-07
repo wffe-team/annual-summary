@@ -122,6 +122,8 @@ body .fullpage .section-eight .completeItems-h1 {
   color: #707d8d;
 }
 body .fullpage .section-eight .completeItems-text {
+  text-align: left;
+  margin-left: 45%;
   font-size: 20px;
   line-height: 36px;
 }
