@@ -62,11 +62,11 @@
         @for(var i=0;i< model.lablesNumber.length;i++){
         <input type="hidden" class="lablesNumber" value="@model.lablesNumber[i]"/>
         }
-        <h1 class="labels-h1">labels各个类型对应项目的数量：</h1>
+        <h1 class="labels-h1">Labels各个类型对应项目的数量：</h1>
         <div id="labelsItems"></div>
     </div>
     <div class="section section-seven">
-        <h1 class="pause-h1">Pause过的项目：</h1>
+        <h1 class="pause-h1"><span class="pause">Pause</span>过的项目：</h1>
         <br />
         @for(var i=0;i< model.pauseItems.length;i++){
         <div class="pause-text">@model.pauseItems[i]</div>

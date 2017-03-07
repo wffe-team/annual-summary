@@ -98,6 +98,12 @@ body .fullpage .section-six .position {
 body .fullpage .section-seven {
   background-color: #f0f4fa;
 }
+body .fullpage .section-seven .pause {
+  display: inline-block;
+  margin-right: 5px;
+  color: red;
+  transform: rotate(-7deg);
+}
 body .fullpage .section-seven .pause-h1 {
   font-size: 48px;
   color: #707d8d;
@@ -107,13 +113,16 @@ body .fullpage .section-seven .pause-text {
   font-size: 20px;
   line-height: 36px;
 }
+body .fullpage .red {
+  color: red;
+}
 body .fullpage .section-eight {
   background-color: #f0f4fa;
 }
 body .fullpage .section-eight .lt,
 body .fullpage .section-eight .rt {
   float: left;
-  margin-top: 150px;
+  margin-top: 50px;
   width: 50%;
   height: 500px;
 }
