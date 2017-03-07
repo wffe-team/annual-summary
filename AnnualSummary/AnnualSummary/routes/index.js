@@ -109,16 +109,6 @@ router.get('/', function (req, res) {
                     }
                 }
                 count(careerArr, personalItem);
-                //for (var m = 0; m < careerArr.length; m++) {
-                //    var single = 0;
-                //    for (var n = 0; n < personalItem.length; n++) {
-                //        if (personalItem[n].indexOf(careerArr[m]) > -1 && personalItem[n].indexOf(careerArr[m]) < 3) {
-                //            single++;
-                //        }
-                //    }
-                //    total += single;
-                //    arr.push(single);
-                //}
                 other = personalItem.length - total;
                 arr.push(other);
                 persoanlArr.push(arr);
@@ -176,8 +166,15 @@ router.get('/', function (req, res) {
                 count(careerArr, itemArr);
                 other = itemArr.length - total;
                 arr.push(other);
-                //persoanlArr.push(arr);
-                itemsArr.push(arr);
+                //处理数组 为空时去掉
+                for (var x = 0; x < arr.length; x++) {
+                    if (arr[x] != 0) {
+                        itemsArr.push(arr);
+                        break;
+                    } else {
+                        continue;
+                    }
+                }               
             }
             console.log(itemsArr);
 
@@ -194,9 +191,6 @@ router.get('/', function (req, res) {
                     arr.push(single);
                 }
             }
-
-
-
 
             /**
              *  项目完成状态
@@ -299,7 +293,10 @@ router.get('/', function (req, res) {
             }
             //输出成员姓名
             //console.log(idMembersFullName);
-            res.render('index', { value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr, careerArr: careerArr, pauseItems: pauseItems, completeItems: completeItems, strEndDateArr: strEndDateArr});
+            res.render('index', {
+                value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr,
+                careerArr: careerArr, pauseItems: pauseItems, completeItems: completeItems, strEndDateArr: strEndDateArr, itemsArr: itemsArr
+            });
         }
     });
 

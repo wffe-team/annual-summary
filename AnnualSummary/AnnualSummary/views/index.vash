@@ -72,9 +72,20 @@
             @for(var i=0;i< model.strEndDateArr.length;i++){
             <input type="hidden" class="strEndDateArr" value="@model.strEndDateArr[i]" />
             }
-        </div>
-       
+        </div>      
         <div class="rt" id="setendtime"></div>
+    </div>
+    <div class="section section-nine">
+        @for(var i=0;i< model.itemsArr.length;i++){
+        @for(var j=0;j< model.itemsArr[i].length;j++){
+        <input class="labels-items" type="hidden" value="@model.itemsArr[i][j]" />
+        }
+        }
+        <div class="personal-chart" id="biChart"></div>
+        <div class="personal-chart" id="yangChart"></div>
+        <div class="personal-chart" id="liChart"></div>
+        <div class="personal-chart" id="luChart"></div>
+        <div class="personal-chart" id="luChart"></div>
     </div>
     <div class="section section-end">
         The&nbsp;&nbsp; End !
