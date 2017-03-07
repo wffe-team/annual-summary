@@ -145,8 +145,8 @@ router.get('/', function (req, res) {
                 lablesNumber.push(iNum);
             }
             //输出各个标签 （labelsName）以及对应的数量(lablesNumber)
-            console.log(labelsName);
-            console.log(lablesNumber);
+          //  console.log(labelsName);
+         //   console.log(lablesNumber);
 
             //按工作量查询各事业部的项目
             var itemsArr = [];            
@@ -176,7 +176,7 @@ router.get('/', function (req, res) {
                     }
                 }               
             }
-            console.log(itemsArr);
+          //  console.log(itemsArr);
 
             //统计各事业部的项目数函数
             function count(all, item) {
