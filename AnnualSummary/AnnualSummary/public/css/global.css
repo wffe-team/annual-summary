@@ -79,7 +79,7 @@ body .fullpage .section-five .personal-chart {
 }
 body .fullpage .section-six {
   position: relative;
-  background: #2c343c;
+  background-color: #777;
 }
 body .fullpage .section-six #maxItemsName {
   width: 100%;
@@ -96,6 +96,37 @@ body .fullpage .section-six .position {
   right: 30px;
 }
 body .fullpage .section-seven {
+  background-color: #f0f4fa;
+}
+body .fullpage .section-seven .pause-h1 {
+  font-size: 48px;
+  color: #707d8d;
+  margin-top: -100px;
+}
+body .fullpage .section-seven .pause-text {
+  font-size: 20px;
+  line-height: 36px;
+}
+body .fullpage .section-eight {
+  background-color: #f0f4fa;
+}
+body .fullpage .section-eight .lt,
+body .fullpage .section-eight .rt {
+  float: left;
+  margin-top: 150px;
+  width: 50%;
+  height: 500px;
+}
+body .fullpage .section-eight .completeItems-h1 {
+  font-size: 48px;
+  color: #707d8d;
+  margin-top: -100px;
+}
+body .fullpage .section-eight .completeItems-text {
+  font-size: 20px;
+  line-height: 36px;
+}
+body .fullpage .section-end {
   font-family: dulcinea;
   font-size: 144px;
   color: #aa314d;

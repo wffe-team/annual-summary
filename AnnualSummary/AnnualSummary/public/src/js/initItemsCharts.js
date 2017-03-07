@@ -8,7 +8,7 @@
     var maxNumber = $('#maxNumber').val();
     var myChart = echarts.init(document.getElementById('maxItemsName'));
     var option = {
-        backgroundColor: '#2c343c',
+        backgroundColor: '#777',
 
         title: {
             text: "参与人员最多的项目："+maxNumber,
@@ -49,7 +49,7 @@
                 label: {
                     normal: {
                         textStyle: {
-                            color: 'rgba(255, 255, 255, 0.3)',
+                            color: 'rgba(255, 255, 255, 0.6)',
                             fontSize: '18'
                         }
                     }

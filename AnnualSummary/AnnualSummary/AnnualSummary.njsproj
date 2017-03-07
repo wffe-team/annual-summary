@@ -41,6 +41,7 @@
     <Compile Include="public\src\js\initfullpage.js" />
     <Compile Include="public\src\js\initItemsCharts.js" />
     <Compile Include="public\src\js\initPersonalCharts.js" />
+    <Compile Include="public\src\js\initSetEndTimeItems.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
