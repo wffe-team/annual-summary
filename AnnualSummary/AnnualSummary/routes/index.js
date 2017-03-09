@@ -120,9 +120,22 @@ router.get('/', function (req, res) {
 
             //默认设置的标签类型 （labelsName）
             var labelsName = [];
-            for (x in obj.labelNames) {
-                labelsName.push(x)
+            var labelsSliceIndex;
+            var labelsNameG ;
+            for (var g = 0; g < obj.labels.length; g++) {
+                labelsSliceIndex = obj.labels[g].name.indexOf('（');
+                labelsNameG = obj.labels[g].name
+                if (labelsSliceIndex == -1) {
+                    labelsName.push(labelsNameG);
+                } else {
+                    labelsName.push(labelsNameG.substring(0,labelsSliceIndex));
+                }
             }
+            var labelsNames = [];
+            for (x in obj.labelNames) {
+                labelsNames.push(x)
+            }
+           // console.log(labelsName)
             //所有项目的标签 （labels）
             //输出各个类型标签所对应的项目类型 （colorName）
             //假定需要输出有上线压力的项目名称 （color）
@@ -130,9 +143,16 @@ router.get('/', function (req, res) {
             for (var i = 0; i < card.length; i++) {
                 var label = card[i].labels;
                 for (var j = 0; j < label.length; j++) {
-                    labels.push(card[i].labels[j].color);
+                    labelsSliceIndex = label[j].name.indexOf('（');
+                    labelsNameG = label[j].name
+                    if (labelsSliceIndex == -1) {
+                        labels.push(card[i].labels[j].name);
+                    } else {
+                        labels.push(card[i].labels[j].name.substring(0, labelsSliceIndex));
+                    }
                 }
             }
+         
             //各个标签的数量（lablesNumber）
             var lablesNumber = [];
             for (var i = 0; i < labelsName.length; i++) {
@@ -151,14 +171,14 @@ router.get('/', function (req, res) {
             //按工作量查询各事业部的项目
             var itemsArr = [];            
             var itemArr;
-            for (var k = 0; k < labelsName.length; k++) {
+            for (var k = 0; k < labelsNames.length; k++) {
                 itemArr = [];
                 var arr = [];
                 var total = 0;
                 var other = 0;
                 for (var i = 0; i < card.length; i++) {
                     for (var j = 0; j < card[i].labels.length; j++) {
-                        if (labelsName[k] == card[i].labels[j].color) {
+                        if (labelsNames[k] == card[i].labels[j].color) {
                             itemArr.push(card[i].name);
                         }
                     }                   
@@ -176,7 +196,7 @@ router.get('/', function (req, res) {
                     }
                 }               
             }
-          //  console.log(itemsArr);
+           console.log(itemsArr);
 
             //统计各事业部的项目数函数
             function count(all, item) {

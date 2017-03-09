@@ -8,7 +8,7 @@ var personalArr = [];
 for (var i = 0; i < arrItems.length - 1; i = i + 7) {
     personalArr.push([arrItems[i], arrItems[i + 1], arrItems[i + 2], arrItems[i + 3], arrItems[i + 4], arrItems[i + 5], arrItems[i + 6]]);
 }
-
+console.log(personalArr)
 var persoanlArr = [];
 $('.careerArr').each(function () {
     persoanlArrVal = $(this).val();

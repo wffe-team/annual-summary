@@ -65,6 +65,10 @@
         <h1 class="labels-h1">Labels各个类型对应项目的数量：</h1>
         <div id="labelsItems"></div>
     </div>
+    <div class="section section-eleven">
+
+        <div id="labelsItemsL"></div>
+    </div>
     <div class="section section-ten">
         @for(var i=0;i< model.itemsArr.length;i++){
         @for(var j=0;j< model.itemsArr[i].length;j++){
@@ -114,6 +118,7 @@
 <script src="../src/js/initItemsCharts.js"></script>
 <script src="../src/js/initSetEndTimeItems.js"></script>
 <script src="../src/js/initLabelsItem.js"></script>
+<script src="../src/js/initLabelsItems.js"></script>
 <script src="../src/js/initLabels.js"></script>
     })
 })
