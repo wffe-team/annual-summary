@@ -148,16 +148,7 @@ body .fullpage .section-nine #labelsItems {
   height: 500px;
   width: 70%;
 }
-body .fullpage .section-ten .color-chart {
-  width: 33%;
-  height: 300px;
-  text-align: center;
-  display: inline-block;
-}
-body .fullpage .section-ten .color-chart canvas {
-  width: 100% !important;
-}
-body .fullpage .section-eleven #labelsItemsL {
+body .fullpage .section-ten #labelsItemsL {
   width: 100%;
   height: 500px;
 }

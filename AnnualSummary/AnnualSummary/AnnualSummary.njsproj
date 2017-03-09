@@ -40,7 +40,6 @@
     <Compile Include="public\src\js\initecharts.js" />
     <Compile Include="public\src\js\initfullpage.js" />
     <Compile Include="public\src\js\initItemsCharts.js" />
-    <Compile Include="public\src\js\initLabels.js" />
     <Compile Include="public\src\js\initLabelsItem.js" />
     <Compile Include="public\src\js\initLabelsItems.js" />
     <Compile Include="public\src\js\initPersonalCharts.js" />
