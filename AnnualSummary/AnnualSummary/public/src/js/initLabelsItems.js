@@ -53,7 +53,7 @@
                 },
                 {
                     value: personalArr[1],
-                    name: labelsName[1]
+                    name: labelsName[3]
                 },
                 {
                     value: personalArr[2],
@@ -61,7 +61,7 @@
                 },
                 {
                     value: personalArr[3],
-                    name: labelsName[3]
+                    name: labelsName[1]
                 },
                 {
                     value: personalArr[4],
