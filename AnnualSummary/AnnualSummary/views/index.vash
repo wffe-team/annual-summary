@@ -57,10 +57,10 @@
     </div>
     <div class="section section-nine">
         @for(var i=0;i< model.labelsName.length;i++){
-        <input type="hidden" class="labelsName" value="@model.labelsName[i]"/>
+        <input type="hidden" class="labelsName" value="@model.labelsName[i]" />
         }
         @for(var i=0;i< model.lablesNumber.length;i++){
-        <input type="hidden" class="lablesNumber" value="@model.lablesNumber[i]"/>
+        <input type="hidden" class="lablesNumber" value="@model.lablesNumber[i]" />
         }
         <h1 class="labels-h1">Labels各个类型对应项目的数量：</h1>
         <div id="labelsItems"></div>
@@ -90,26 +90,16 @@
             @for(var i=0;i< model.strEndDateArr.length;i++){
             <input type="hidden" class="strEndDateArr" value="@model.strEndDateArr[i]" />
             }
-        </div>      
+        </div>
         <div class="rt" id="setendtime"></div>
     </div>
-    
+
     <div class="section section-end">
         The&nbsp;&nbsp; End !
     </div>
 </div>
     })
     @html.block('script', function(model){
-<script src="../js/jquery-1.12.4.min.js"></script>
-<script src="../js/echarts.min.js"></script>
-<script src="../js/tags.js"></script>
-<script src="../module/jquery.fullpage.min.js"></script>
-<script src="../src/js/initfullpage.js"></script>
-<script src="../src/js/initecharts.js"></script>
-<script src="../src/js/initPersonalCharts.js"></script>
-<script src="../src/js/initItemsCharts.js"></script>
-<script src="../src/js/initSetEndTimeItems.js"></script>
-<script src="../src/js/initLabelsItem.js"></script>
-<script src="../src/js/initLabelsItems.js"></script>
+
     })
 })

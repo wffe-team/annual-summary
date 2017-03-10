@@ -6,6 +6,23 @@
     <title>年度总结</title>
     <link href="../css/global.min.css" rel="stylesheet" />
     <link href="../module/jquery.fullpage.min.css" rel="stylesheet" />
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../module/jquery.fullpage.min.js"></script>
+    <script src="../src/js/initfullpage.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/tags.js"></script>
+    <script type="text/javascript">
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "../js/bundle.min.js";
+            document.body.appendChild(element);
+        }
+        if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
 </head>
 <body>
     @html.block('content')

@@ -5,5 +5,16 @@
       "public/src/css/index.css",
       "public/src/css/reset.css"
     ]
+  },
+  {
+    "outputFileName": "public/js/bundle.js",
+    "inputFiles": [
+      "public/src/js/initecharts.js",
+      "public/src/js/initItemsCharts.js",
+      "public/src/js/initLabelsItem.js",
+      "public/src/js/initLabelsItems.js",
+      "public/src/js/initPersonalCharts.js",
+      "public/src/js/initSetEndTimeItems.js"
+    ]
   }
 ]

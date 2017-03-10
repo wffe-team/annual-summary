@@ -33,6 +33,8 @@
     <Compile Include="app.js" />
     <Compile Include="controllers\home.js" />
     <Compile Include="data\home.js" />
+    <Compile Include="public\js\bundle.js" />
+    <Compile Include="public\js\bundle.min.js" />
     <Compile Include="public\js\echarts.min.js" />
     <Compile Include="public\js\jquery-1.12.4.min.js" />
     <Compile Include="public\js\tags.js" />
