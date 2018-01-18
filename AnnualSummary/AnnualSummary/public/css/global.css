@@ -3,22 +3,24 @@ body {
   font-size: 12px;
   color: #333;
 }
-body .fullpage .section {
+.fullpage {
   height: 100%;
+  position: relative;
+}
+.fullpage .section {
   text-align: center;
 }
-body .fullpage .section p {
+.fullpage .section p {
   font-size: 48px;
   color: #707d8d;
 }
-body .fullpage .section-one {
+.fullpage .section-one {
   background: linear-gradient(to bottom, #4f7f9b, #293c55);
 }
-body .fullpage .section-one .year {
+.fullpage .section-one .year {
   color: #fff;
-  margin-top: 100px;
 }
-body .fullpage .section-one .year .number {
+.fullpage .section-one .year .number {
   display: inline-block;
   width: 70px;
   height: 70px;
@@ -28,7 +30,7 @@ body .fullpage .section-one .year .number {
   margin-left: 5px;
   margin-right: 5px;
 }
-body .fullpage .section-one h1 {
+.fullpage .section-one h1 {
   color: #fff;
   font-size: 48px;
   margin-top: 40px;
@@ -38,20 +40,20 @@ body .fullpage .section-one h1 {
   width: 386px;
   display: inline-block;
 }
-body .fullpage .section-one img {
+.fullpage .section-one img {
   margin-top: 143px;
   width: 100%;
 }
-body .fullpage .section-two {
+.fullpage .section-two {
   background-color: #f0f4fa;
 }
-body .fullpage .section-two .tags-list {
+.fullpage .section-two .tags-list {
   position: relative;
   width: 1000px;
   height: 500px;
   margin: 0 auto;
 }
-body .fullpage .section-two .tags-list .person {
+.fullpage .section-two .tags-list .person {
   position: absolute;
   top: 0;
   left: 0;
@@ -63,96 +65,93 @@ body .fullpage .section-two .tags-list .person {
   height: 30px;
   padding: 35px 5px;
 }
-body .fullpage .section-three {
+.fullpage .section-three {
   background-color: #f0f4fa;
 }
-body .fullpage .section-three .career-chart {
+.fullpage .section-three .career-chart {
   width: 650px;
   height: 500px;
   margin: 50px auto;
 }
-body .fullpage .section-four .personal-chart,
-body .fullpage .section-five .personal-chart {
+.fullpage .section-four .personal-chart,
+.fullpage .section-five .personal-chart {
   width: 40%;
   height: 300px;
   display: inline-block;
 }
-body .fullpage .section-six {
+.fullpage .section-six {
   position: relative;
   background-color: #777;
 }
-body .fullpage .section-six #maxItemsName {
+.fullpage .section-six #maxItemsName {
   width: 100%;
   height: 500px;
 }
-body .fullpage .section-six p {
+.fullpage .section-six p {
   font-size: 36px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
-body .fullpage .section-six .position {
+.fullpage .section-six .position {
   position: absolute;
   bottom: 30px;
   right: 30px;
 }
-body .fullpage .section-seven {
+.fullpage .section-seven {
   background-color: #f0f4fa;
 }
-body .fullpage .section-seven .pause {
+.fullpage .section-seven .pause {
   display: inline-block;
   margin-right: 5px;
   color: red;
   transform: rotate(-7deg);
 }
-body .fullpage .section-seven .pause-h1 {
+.fullpage .section-seven .pause-h1 {
   font-size: 48px;
   color: #707d8d;
   margin-top: -100px;
 }
-body .fullpage .section-seven .pause-text {
+.fullpage .section-seven .pause-text {
   font-size: 20px;
   line-height: 36px;
 }
-body .fullpage .red {
-  color: red;
-}
-body .fullpage .section-eight {
+.fullpage .section-eight {
   background-color: #f0f4fa;
 }
-body .fullpage .section-eight .lt,
-body .fullpage .section-eight .rt {
+.fullpage .section-eight .lt,
+.fullpage .section-eight .rt {
   float: left;
   margin-top: 50px;
   width: 50%;
   height: 500px;
 }
-body .fullpage .section-eight .completeItems-h1 {
+.fullpage .section-eight .completeItems-h1 {
   font-size: 48px;
   color: #707d8d;
 }
-body .fullpage .section-eight .completeItems-text {
+.fullpage .section-eight .completeItems-text {
   text-align: left;
   margin-left: 45%;
   font-size: 20px;
   line-height: 36px;
 }
-body .fullpage .section-nine {
+.fullpage .section-nine {
   background-color: #f0f4fa;
 }
-body .fullpage .section-nine .labels-h1 {
+.fullpage .section-nine .labels-h1 {
   font-size: 48px;
   color: #707d8d;
 }
-body .fullpage .section-nine #labelsItems {
+.fullpage .section-nine #labelsItems {
   margin: 0 auto;
   height: 500px;
   width: 70%;
 }
-body .fullpage .section-ten #labelsItemsL {
+.fullpage .section-ten #labelsItemsL {
   width: 100%;
   height: 500px;
 }
-body .fullpage .section-end {
+.fullpage .section-end {
   font-family: dulcinea;
   font-size: 144px;
   color: #aa314d;

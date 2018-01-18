@@ -1,21 +1,22 @@
-﻿var itemnum;
-var arrItems = [];
-$('.personal-items').each(function () {
-    itemnum = $(this).val();
-    arrItems.push(itemnum)
-});
-var personalArr = [];
-for (var i = 0; i < arrItems.length - 1; i = i + 7) {
-    personalArr.push([arrItems[i], arrItems[i + 1], arrItems[i + 2], arrItems[i + 3], arrItems[i + 4], arrItems[i + 5], arrItems[i + 6]]);
-}
+﻿(function () {
+    var itemnum;
+    var arrItems = [];
+    $('.personal-items').each(function () {
+        itemnum = $(this).val();
+        arrItems.push(itemnum)
+    });
+    var personalArr = [];
+    for (var i = 0; i < arrItems.length - 1; i = i + 7) {
+        personalArr.push([arrItems[i], arrItems[i + 1], arrItems[i + 2], arrItems[i + 3], arrItems[i + 4], arrItems[i + 5], arrItems[i + 6]]);
+    }
 
-var persoanlArr = [];
-$('.careerArr').each(function () {
-    persoanlArrVal = $(this).val();
-    persoanlArr.push(persoanlArrVal);
-});
-persoanlArr.push('其他');
-(function () {    
+    var persoanlArr = [];
+    $('.careerArr').each(function () {
+        persoanlArrVal = $(this).val();
+        persoanlArr.push(persoanlArrVal);
+    });
+    persoanlArr.push('其他');
+
     var myChart = echarts.init(document.getElementById('biChart'));
     var option = {
         color: ['#707d8d'],
@@ -56,9 +57,8 @@ persoanlArr.push('其他');
                 data: personalArr[0]
             }
         ]
-    };    myChart.setOption(option);
-})();
-(function () {
+    }; myChart.setOption(option);
+
     var myChart = echarts.init(document.getElementById('yangChart'));
     var option = {
         color: ['#707d8d'],
@@ -100,8 +100,7 @@ persoanlArr.push('其他');
             }
         ]
     }; myChart.setOption(option);
-})();
-(function () {
+
     var myChart = echarts.init(document.getElementById('liChart'));
     var option = {
         color: ['#707d8d'],
@@ -143,8 +142,7 @@ persoanlArr.push('其他');
             }
         ]
     }; myChart.setOption(option);
-})();
-(function () {
+
     var myChart = echarts.init(document.getElementById('luChart'));
     var option = {
         color: ['#707d8d'],
@@ -186,8 +184,7 @@ persoanlArr.push('其他');
             }
         ]
     }; myChart.setOption(option);
-})();
-(function () {
+
     var myChart = echarts.init(document.getElementById('liuChart'));
     var option = {
         color: ['#707d8d'],
@@ -229,8 +226,7 @@ persoanlArr.push('其他');
             }
         ]
     }; myChart.setOption(option);
-})();
-(function () {
+
     var myChart = echarts.init(document.getElementById('zhangChart'));
     var option = {
         color: ['#707d8d'],
@@ -272,8 +268,7 @@ persoanlArr.push('其他');
             }
         ]
     }; myChart.setOption(option);
-})();
-(function () {
+
     var myChart = echarts.init(document.getElementById('cuiChart'));
     var option = {
         color: ['#707d8d'],
@@ -315,8 +310,7 @@ persoanlArr.push('其他');
             }
         ]
     }; myChart.setOption(option);
-})();
-(function () {
+
     var myChart = echarts.init(document.getElementById('anChart'));
     var option = {
         color: ['#707d8d'],
