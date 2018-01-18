@@ -14,6 +14,14 @@
    
     persoanlArrTotle.push('其他');
 
+    var listData = [];
+    for (var i = 0; i < persoanlArrTotle.length; i++) {
+        var listJson = { value: '', name: '' };
+        listJson.value = arrItems[i + 1];
+        listJson.name = persoanlArrTotle[i];
+        listData.push(listJson);
+    }
+
     var myChart = echarts.init(document.getElementById('career-chart'));        
     var option = {
         tooltip: {
@@ -49,15 +57,7 @@
                         show: false
                     }
                 },
-                data: [
-                    { value: arrItems[1], name: persoanlArrTotle[0] },
-                    { value: arrItems[2], name: persoanlArrTotle[1] },
-                    { value: arrItems[3], name: persoanlArrTotle[2] },
-                    { value: arrItems[4], name: persoanlArrTotle[3] },
-                    { value: arrItems[5], name: persoanlArrTotle[4] },
-                    { value: arrItems[6], name: persoanlArrTotle[5] },
-                    { value: arrItems[7], name: persoanlArrTotle[6] }
-                ]
+                data: listData
             }
         ]
     };

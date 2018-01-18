@@ -75,6 +75,7 @@
     <Content Include="public\src\img\bg.png" />
     <Content Include="README.md" />
     <Content Include="trellodata.json" />
+    <Content Include="trelloJson-2017.json" />
     <Content Include="typings.json" />
     <Content Include="views\error.vash" />
     <Content Include="views\index.vash" />

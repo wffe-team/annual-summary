@@ -4,11 +4,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    fs.readFile('trellodata.json', 'utf8', function (err, data) {
+    fs.readFile('trelloJson-2017.json', 'utf8', function (err, data) {
         if (err) {
             return console.error(err);
         } else {
-            var obj = JSON.parse(data);
+            var obj = JSON.parse(data.trim());
 
             /**
              * 前端成员
@@ -29,7 +29,7 @@ router.get('/', function (req, res) {
 
             //var date = new Date();
             //var year = date.getFullYear();
-            var year = '2016';//设置不同年限的
+            var year = '2017';//设置不同年限的
             var idList;
             for (var i = 0; i < obj.lists.length; i++) {
                 if (obj.lists[i].name == year) {
@@ -38,7 +38,7 @@ router.get('/', function (req, res) {
             }
             //所有项目名称
             var names = [];
-            var card = [];//2016所有项目的数据
+            var card = [];//2017所有项目的数据
             for (var i = 0; i < obj.cards.length; i++) {
                 if (obj.cards[i].idList == idList) {
                     var name = obj.cards[i].name;
@@ -76,7 +76,7 @@ router.get('/', function (req, res) {
                 }
                 return careerArr;
             }
-            careerArrTest.unique();
+            careerArr = careerArrTest.unique();
             //输出各个项目类的名称careerArr
             totalItems.push(names.length);
             for (var i = 0; i < careerArr.length; i++) {
@@ -196,7 +196,7 @@ router.get('/', function (req, res) {
                     }
                 }               
             }
-           console.log(itemsArr);
+           //console.log(itemsArr);
 
             //统计各事业部的项目数函数
             function count(all, item) {
@@ -315,6 +315,7 @@ router.get('/', function (req, res) {
             }
             //输出成员姓名
             //console.log(idMembersFullName);
+            console.log(persoanlArr);
             res.render('index', {
                 value: fullNameArr, maxNumber: maxNumberItemName, idNumbersNames: idMembersFullName, totalItems: totalItems, persoanlArr: persoanlArr,
                 careerArr: careerArr, pauseItems: pauseItems, completeItems: completeItems, strEndDateArr: strEndDateArr,labelsName: labelsName, lablesNumber: lablesNumber,itemsArr: itemsArr
